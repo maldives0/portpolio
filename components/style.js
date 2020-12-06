@@ -3,7 +3,7 @@ import React from 'react';
 import { Global, css } from '@emotion/react';
 import { Input } from 'antd';
 import styled from '@emotion/styled';
-
+import { Slide } from 'react-full-page';
 export const GlobalLayout = () => (
   <Global
     styles={css`
@@ -31,3 +31,9 @@ text-transform:uppercase;
 
 `;
 
+export const SlideStyle = styled.div`
+display: flex;
+justify-content: center;
+align-items:center;
+min-height: '500px'
+`;

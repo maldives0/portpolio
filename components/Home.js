@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Education = () => {
+const Home = () => {
     return (
         <>
-            Education
+            Home
         </>
     );
 }
-export default Education;
+export default Home;
