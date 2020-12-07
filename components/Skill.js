@@ -7,9 +7,9 @@ const Skill = () => {
 
     return (
         <div style={{ height: 'auto' }}>
-            <Divider orientation="center">Export</Divider>
+            <Divider orientation="center">Expert</Divider>
 
-            <Row justify="space-around" gutter={[24, 8]}>
+            <Row justify="space-around" gutter={8}>
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/html5.png"

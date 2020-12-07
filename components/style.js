@@ -15,9 +15,19 @@ export const GlobalLayout = () => (
     background:#f0f2f5;
   }
   .ant-row{
-       margin:0 !important;
-  } 
-           `
+    margin-right:0 !important;
+  }
+ 
+      .ant-drawer-right {
+        overflow:hidden;
+      }
+      .ant-drawer-right.ant-drawer-open .ant-drawer-content-wrapper{
+        width:300px !important;
+      }
+      .ant-drawer-body{
+       overflow:hidden;
+      }
+             `
     } />
 );
 
@@ -46,3 +56,17 @@ left:0;
 padding: 30px 0  5% 220px;
 
 `;
+
+export const FormStyle = styled.div`
+
+display: flex;
+justify-content: center;
+align-items:center;
+.ant-input{
+  width:280px;
+}
+.textarea.ant-input{
+  min-width:auto;
+}
+    
+`
