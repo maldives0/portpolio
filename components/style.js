@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Global, css } from '@emotion/react';
-import { Input } from 'antd';
+
 import styled from '@emotion/styled';
 import { Slide } from 'react-full-page';
 export const GlobalLayout = () => (
@@ -11,13 +11,16 @@ export const GlobalLayout = () => (
   .site-layout-background {
     background: #fff;
   }
-         `
+  .basic-layout-background{
+    background:#f0f2f5;
+  }
+  .ant-row{
+       margin:0 !important;
+  } 
+           `
     } />
 );
-export const InputSearch = styled(Input.Search)`
-vertical-align: middle;
-margin-right:5px;`
-  ;
+
 export const Logo = styled.div`
 height:300px;
 padding:10px;
@@ -35,5 +38,11 @@ export const SlideStyle = styled.div`
 display: flex;
 justify-content: center;
 align-items:center;
-min-height: '500px'
+flex-direction: column;
+height:100%;
+position:relative;
+top:0;
+left:0;
+padding: 30px 0  5% 220px;
+
 `;
