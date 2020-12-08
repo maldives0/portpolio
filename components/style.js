@@ -53,7 +53,7 @@ height:100%;
 position:relative;
 top:0;
 left:0;
-padding: 30px 0  5% 220px;
+padding: 0 0 5% 220px;
 
 `;
 

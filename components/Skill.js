@@ -6,10 +6,15 @@ import Image from 'next/image';
 const Skill = () => {
 
     return (
-        <div style={{ height: 'auto' }}>
+        <div
+            data-aos-anchor="#trigger-skill"
+            style={{ height: 'auto' }}>
             <Divider orientation="center">Expert</Divider>
 
-            <Row justify="space-around" gutter={8}>
+            <Row
+                justify="space-around"
+                data-aos="slide-up"
+                gutter={8}>
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/html5.png"
@@ -28,7 +33,10 @@ const Skill = () => {
                 </Col>
             </Row>
             <Divider orientation="center">Intermediate</Divider>
-            <Row justify="space-around" gutter={[24, 8]}>
+            <Row
+                justify="space-around"
+                data-aos="slide-up"
+                gutter={[24, 8]}>
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/js.png"
@@ -72,7 +80,10 @@ const Skill = () => {
                 </Col>
             </Row>
             <Divider orientation="center">Experience</Divider>
-            <Row justify="space-around" gutter={[24, 8]}>
+            <Row
+                justify="space-around"
+                data-aos="slide-up"
+                gutter={[24, 8]}>
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/expressjs.png"
