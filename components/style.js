@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Global, css } from '@emotion/react';
-
+import { Card } from 'antd';
 import styled from '@emotion/styled';
 import { Slide } from 'react-full-page';
 export const GlobalLayout = () => (
@@ -70,3 +70,33 @@ align-items:center;
 }
     
 `
+
+export const AboutLayout = () => (
+  <Global
+    styles={css`    
+              .ant-typography {
+      line-height: 2em;
+      text-align: center;
+    }      
+    .ant-typography .ant-typography-secondary {
+        font-size:1.4em;
+    }  
+             `
+    } />
+);
+export const ExperienceLayout = () => (
+  <Global
+    styles={css`    
+    .ant-card-cover{
+      padding: 10px;
+         }
+    .ant-typography{
+      margin-bottom:20px;
+    }
+    .ant-card{
+      width:240px;
+      margin-right:15px;
+    }
+             `
+    } />
+);

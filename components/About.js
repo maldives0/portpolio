@@ -1,23 +1,8 @@
 import React, { useEffect } from 'react';
-import { Global, css } from '@emotion/react';
-import styled from '@emotion/styled';
+import { AboutLayout } from './style';
 import { Typography } from 'antd';
 import AOS from 'aos';
 const { Title, Paragraph, Text } = Typography;
-const GlobalLayout = () => (
-    <Global
-        styles={css`    
-                .ant-typography {
-        line-height: 2em;
-        text-align: center;
-      }      
-      .ant-typography .ant-typography-secondary {
-          font-size:1.4em;
-      }
-  
-               `
-        } />
-);
 
 const About = () => {
     useEffect(() => {
@@ -28,7 +13,7 @@ const About = () => {
     }, []);
     return (
         <div data-aos-anchor="#trigger-about">
-            <GlobalLayout />
+            <AboutLayout />
             <Paragraph
                 style={{ marginBottom: 100 }}
                 data-aos="fade">

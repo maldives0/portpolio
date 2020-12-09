@@ -1,39 +1,86 @@
-import React from 'react';
-import { Card, Typography } from 'antd';
-const { Title, Paragraph, Text } = Typography;
+import React, { useEffect, useState, useRef, useCallback } from 'react';
+import {
+    Typography, Card, Tooltip
+    , Row, Col
+} from 'antd';
+import { TeamOutlined, CoffeeOutlined, CopyOutlined } from '@ant-design/icons';
+import { ExperienceLayout } from './style';
+const { Title } = Typography;
+
 const Experience = () => {
 
-    const gridStyle = {
-        width: '50%',
-        textAlign: 'center',
-    };
+
     return (
         <>
-            <Paragraph
-                data-aos="fade-down"
-                data-aos-delay="200"
-
-            >
+            <ExperienceLayout />
+            <Row xs={21} sm={12} md={8}>
                 <Title
-                    level={3}> 지금은 보유한 기술의 종류보다는
-                     <br />
-                      생각하는 방식이 중요한 시대라고 생각합니다. </Title>
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                    level={3}
+                >회사에 필요하다면 저는 이런 일도 할 수 있습니다
+                </Title>
+            </Row>
+            <div data-aos="fade-down"
+                data-aos-delay="200"
+            >
+                <Row justify="space-between" >
+                    <Col xs={21} sm={12} md={8}>
+                        <Tooltip
+                            trigger="hover"
+                            placement='left'
+                            title="저는 논리적인 글쓰기에 자신이 있습니다. 석사논문 작성 경험과 더불어 전에 일했던 논술학원에서 논리적 글쓰기를 지도한 경험이 있습니다. 더불어 국어국문학부생 논문 지도, 군무원 이력서 지도 등의 경험이 있습니다.">
+                            <Card
+                                hoverable
+                                cover={
 
-                <Text
-                >
-                    '문제를 해결하기 위해 정확한 질문을 할 수 있는가?'
-                <br />
-                    <br />
-                '해결하려는 문제를 정확히 이해하고 있는가?' </Text>
-            </Paragraph>
-            <Card>
-                <Card.Grid style={gridStyle}>Content</Card.Grid>
-                <Card.Grid hoverable={false} style={gridStyle}>
-                    Content
-    </Card.Grid>
-                <Card.Grid style={gridStyle}>Content</Card.Grid>
-                <Card.Grid style={gridStyle}>Content</Card.Grid>
-            </Card>
+                                    <CopyOutlined style={{ fontSize: 50 }} />
+                                }
+                            >
+                                <Card.Meta title="Documentation"
+                                    description="저의 논리적인 글쓰기 능력은 사내에 필요한 문서 작업에 도움이 될 것입니다"
+                                />
+                            </Card>
+                        </Tooltip>
+                    </Col>
+                    <Col xs={21} sm={12} md={8}>
+                        <Tooltip
+                            trigger="hover"
+                            title="저는 다른 사람의 성장에 도움이 되는 일을 하는 데 관심이 많습니다. 대학원 시절과 학원에서 다양한 교육 프로그램을 체험하고 운영한 경험으로 사내 HRD에 도움을 드릴 수 있습니다.">
+                            <Card
+                                hoverable
+                                cover={
+
+                                    <TeamOutlined style={{ fontSize: 50 }} />
+                                }
+                            >
+                                <Card.Meta title="HRD"
+                                    description="함께 성장하는 기업의 조직문화를 만들어가는 일을 좋아합니다."
+                                />
+                            </Card>
+                        </Tooltip>
+                    </Col>
+                    <Col xs={21} sm={12} md={8}>
+                        <Tooltip
+                            trigger="hover"
+                            placement="right"
+                            title="제21대 국회의원선거 예비후보 정재준 후보의 홍보기사 작성 및 이미지메이킹을 담당하는 봉사활동을 한 경험이 있습니다. 또한 학원에서 학습 프로그램 홍보 문구를 작성한 경험이 있습니다.">
+                            <Card
+                                hoverable
+                                cover={
+
+                                    <TeamOutlined style={{ fontSize: 50 }} />
+                                }
+                            >
+                                <Card.Meta title="홍보"
+                                    description="회사를 홍보하는 copywrite와 설득력 있는 프로젝트 기획서를 작성할 수 있습니다."
+                                />
+                            </Card>
+                        </Tooltip>
+                    </Col>
+                </Row>
+
+            </div>
         </>
     );
 }

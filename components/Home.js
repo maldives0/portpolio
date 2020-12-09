@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <>
             <Title
-                data-aos="fade-out"
+                data-aos="fade-up"
                 data-aos-duration="2000"
                 level={1}
                 style={{
