@@ -1,34 +1,26 @@
 import React, { useState, useCallback } from 'react';
 import {
-    Typography, Card, Tooltip
-    , Row, Col
+    Typography, Card, Modal
+    , Row, List, Descriptions
 } from 'antd';
 import Image from 'next/image';
 import { ProjectLayout } from './style';
 const { Title } = Typography;
-
-const projectTabList = [
-    {
-        key: '다온',
-        tab: '다온',
-    },
-    {
-        key: 'ymillonga_map',
-        tab: 'ymillonga_map',
-    },
-    {
-        key: 'ymillonga_sns',
-        tab: 'ymillonga_sns',
-    },
-    {
-        key: 'portpolio',
-        tab: 'portpolio',
-    },
-];
+import projectData from '../assets/data';
 
 
 const Project = () => {
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
+    const showModal = useCallback(() => {
+        setIsModalVisible(true);
+    }, []);
+
+
+
+    const handleCancel = useCallback(() => {
+        setIsModalVisible(false);
+    }, []);
     return (
         <>
             <div data-aos="fade-down"
@@ -36,63 +28,49 @@ const Project = () => {
             >
                 <ProjectLayout />
                 <Row gutter={[16, 16]} justify="space-around" >
-                    <Col xs={12} md={10} lg={6}>
-                        <Card
-                            hoverable
-                            cover={<Image
-                                src="/img/daon-logo.png"
-                                alt="daon"
-                                width={100} height={150}
-                            />} >
-                            <Card.Meta title="Daon Homepage Renewal"
-                                description="다온 펜션 홈페이지를 리뉴얼하는 프로젝트입니다."
-                            />
-                        </Card>
 
-                    </Col>
-                    <Col xs={12} md={10} lg={6}>
+                    <List
+                        grid={{
+                            xs: 2,
+                            sm: 2,
+                            md: 3,
+                            xl: 6,
+                            gutter: 8
+                        }}
+                        dataSource={projectData}
+                        itemLayout="horizontal"
+                        renderItem={(item) => (
+                            <List.Item>
+                                <Card
+                                    hoverable
+                                    onClick={showModal}
+                                    cover={<Image
+                                        src={item.img}
+                                        alt={item.key}
+                                        width={100} height={150}
+                                    />} >
+                                    <Card.Meta title={item.title}
+                                        description={item.desc}
+                                    />
+                                </Card>
+                                <Modal
+                                    onCancel={handleCancel}
 
-                        <Card
-                            hoverable
-                            cover={<Image
-                                src="/img/ymillonga-map.png"
-                                alt="map"
-                                width={100} height={150}
-                            />} >
-                            <Card.Meta title="ymillonga-map version"
-                                description="ymillonga-map를 vanilla JS로 만들어본 프로젝트입니다."
-                            />
-                        </Card>
-                    </Col>
-                    <Col xs={12} md={10} lg={6}>
-                        <Card
-                            hoverable
-                            cover={<Image
-                                src="/img/ymillonga-sns.png"
-                                alt="sns"
-                                width={100} height={150}
-                            />} >
-                            <Card.Meta title="ymillonga-sns version"
-                                description="ymillonga-sns를 React로 만들어본 프로젝트입니다."
-                            />
-                        </Card>
+                                    footer={null}
+                                    title={item.title}
+                                    visible={isModalVisible}  >
+                                    <Descriptions >
+                                        <Descriptions.Item label="Term">{item.term}</Descriptions.Item>
+                                        <Descriptions.Item label="Using Skills">{item.skills}</Descriptions.Item>
+                                        <Descriptions.Item label="func">{item.func}</Descriptions.Item>
 
-                    </Col>
-                    <Col xs={12} md={10} lg={6}>
-                        <Card
-                            hoverable
-                            cover={<Image
-                                src="/img/background-me.jpg"
-                                alt="daon"
-                                width={100} height={150}
-                            />} >
-                            <Card.Meta title="juyoung's portpolio"
-                                description="React로 만든 현재 보고 계신 포트폴리오 사이트입니다."
-                            />
-                        </Card>
-                    </Col>
+                                    </Descriptions>
+                                </Modal>
+
+                            </List.Item>
+                        )}
+                    />
                 </Row>
-
             </div>
         </>
 
