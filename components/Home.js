@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from 'antd';
-const { Title, Paragraph, Text } = Typography;
+const { Title } = Typography;
 const Home = () => {
     return (
         <>

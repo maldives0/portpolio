@@ -1,6 +1,15 @@
 import React, { useState, useCallback } from 'react';
-import { List, Card, Form, Input, Drawer, Button } from 'antd';
-import { FormStyle } from './style';
+import { Typography, List, Card, Form, Input, Drawer, Button } from 'antd';
+import {
+    EnvironmentOutlined,
+    PhoneOutlined,
+    GithubOutlined,
+    CoffeeOutlined,
+    MailOutlined
+} from '@ant-design/icons';
+import { FormStyle, ContactLayout, ContactFlex } from './style';
+const { Paragraph, Link
+} = Typography;
 const validateMessages = {
     required: '${placeholder} is required!',
     types: {
@@ -13,16 +22,33 @@ const validateMessages = {
 };
 const data = [
     {
-        title: 'Title 1',
+        title: <EnvironmentOutlined />,
+        content: <Paragraph copyable={{ tooltips: false }}>서울특별시 강동구 상암로</Paragraph>
     },
     {
-        title: 'Title 2',
+        title: <PhoneOutlined />,
+        content: <Paragraph copyable={{ tooltips: false }}>+82 010-5500-2288</Paragraph>
     },
     {
-        title: 'Title 3',
+        title: <MailOutlined />,
+        content: <Paragraph copyable={{ tooltips: false }}>maliethy@gmail.com</Paragraph>
     },
     {
-        title: 'Title 4',
+        title: <GithubOutlined />,
+        content: <Paragraph copyable={{ tooltips: false }}>
+            <Link href="https://github.com/maldives0" target="_blank">
+                https://github.com/maldives0
+    </Link>
+        </Paragraph>
+    },
+    {
+        title: <CoffeeOutlined />,
+        content: <Paragraph copyable={{ tooltips: false }}>
+            <Link href="https://maldives0.github.io/" target="_blank">
+                https://maldives0.github.io/
+</Link>
+        </Paragraph>
+
     },
 ];
 
@@ -41,25 +67,38 @@ const Contact = () => {
     };
 
     return (
-        <>
-            <List
-                grid={{ gutter: 16, column: 4 }}
-                dataSource={data}
-                renderItem={item => (
-                    <List.Item>
-                        <Card title={item.title}>Card content</Card>
-                    </List.Item>
-                )}
-            />
+        <ContactFlex data-aos-anchor="#trigger-contact"
+        >
+            <ContactLayout />
+            <div className="contact-list-style" data-aos="fade-up" >
+                <List
+
+                    grid={{
+                        xs: 2,
+                        sm: 2,
+                        md: 3,
+                        xl: 6,
+                        gutter: 8
+                    }}
+                    itemLayout="horizontal"
+                    dataSource={data}
+                    renderItem={item => (
+                        <List.Item>
+                            <Card title={item.title}>{item.content}</Card>
+                        </List.Item>
+                    )}
+                />
+            </div>
+
             <div className="site-drawer-render-in-current-wrapper">
                 하고 싶은 말씀이 있으신가요?
-            <div style={{ marginTop: 16 }}>
+            <div className="message-button-display">
                     <Button type="primary" onClick={showDrawer}>
-                        Message
+                        Send Message
           </Button>
                 </div>
                 <Drawer
-                    title="Basic Drawer"
+                    title="메세지 보내기"
                     placement="right"
                     closable={true}
                     onClose={onCloseDrawer}
@@ -91,7 +130,11 @@ const Contact = () => {
                                 <Input.TextArea
                                     required
                                     placeholder="하시고 싶은 말씀을 적어주세요"
-                                    style={{ height: '200px' }} />
+                                    style={{
+                                        width: '300px',
+
+                                        height: '200px'
+                                    }} />
                             </Form.Item>
                             <Form.Item wrapperCol={{ span: 20, offset: 8 }}>
                                 <Button type="primary" htmlType="submit">
@@ -102,7 +145,8 @@ const Contact = () => {
                     </FormStyle>
                 </Drawer>
             </div>
-        </>
+        </ContactFlex>
+
     );
 };
 export default Contact;

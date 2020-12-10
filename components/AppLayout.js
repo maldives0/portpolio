@@ -11,7 +11,7 @@ import {
     HomeOutlined,
 
 } from '@ant-design/icons';
-import { GlobalLayout, Logo } from './style';
+import { GlobalLayout, Logo, SlideUnCollapsed } from './style';
 import Image from 'next/image';
 import { FullPage } from 'react-full-page';
 
@@ -30,7 +30,7 @@ const CustomControls = ({ getCurrentSlideIndex, scrollToSlide }) => {
             selectedKeys={[`${currentSlideIndex + 1}`]}
             onClick={onClickMenu}
             style={{
-                position: 'fixed', bottom: '15%', width: 200, zIndex: 100,
+                position: 'fixed', bottom: '15%', left: 0, width: 150, zIndex: 100,
             }}
         >
             <Menu.Item key="1" icon={<HomeOutlined />}>
@@ -63,16 +63,7 @@ const AppLayout = ({ children }) => {
     return (
         <Layout>
             <GlobalLayout />
-            <Sider
-                className="site-layout-background"
-                style={{
-                    width: '300px',
-                    height: '100vh',
-                    position: 'fixed',
-                    left: 0,
-                    zIndex: 99,
-                }}
-            >
+            <Sider className="site-sider-layout">
                 <Logo>
                     <Row gutter={3} style={{ display: 'block' }}>
                         <Image
@@ -83,7 +74,9 @@ const AppLayout = ({ children }) => {
                         />
                     </Row>
                     <Row gutter={3}>
-                        <Space direction="vertical">
+                        <Space
+                            style={{ fontSize: 13 }}
+                            direction="vertical">
                             <>
                                 <Text type="secondary">Juyoung Jung</Text>
                                 <Text strong>Front-End Developer</Text>

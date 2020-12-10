@@ -8,7 +8,8 @@ const Portpolio = ({ Component }) => {
 
     useEffect(() => {
         AOS.init({
-            duration: 1200,
+            duration: 2000,
+            once: false,
         });
     }, []);
 
