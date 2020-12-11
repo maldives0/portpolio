@@ -30,7 +30,7 @@ const CustomControls = ({ getCurrentSlideIndex, scrollToSlide }) => {
             selectedKeys={[`${currentSlideIndex + 1}`]}
             onClick={onClickMenu}
             style={{
-                position: 'fixed', bottom: '15%', left: 0, width: 150, zIndex: 100,
+                position: 'fixed', bottom: '8%', left: 0, width: 150, zIndex: 100,
             }}
         >
             <Menu.Item key="1" icon={<HomeOutlined />}>

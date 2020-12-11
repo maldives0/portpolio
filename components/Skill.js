@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Popover, Row, Col } from 'antd';
+import { Divider, Popover, Row, Col, List } from 'antd';
 import Image from 'next/image';
 
 
@@ -8,12 +8,14 @@ const Skill = () => {
         <div style={{ textTransform: 'uppercase', textAlign: 'center' }}>
             <p>html5</p>
             <p>css3</p>
+            <p>sass/scss</p>
             <p>jquery</p>
         </div>
     );
     const Intermediate = (
         <div style={{ textTransform: 'uppercase' }}>
-            <p>javascript</p>
+            <p>vanilla javascript</p>
+            <p>ECMAscript6</p>
             <p>react</p>
             <p>redux</p>
             <p>nodejs</p>
@@ -36,6 +38,7 @@ const Skill = () => {
             data-aos-anchor="#trigger-skill"
             style={{ height: 'auto' }}>
             <Divider orientation="center"> Expert</Divider>
+
             <Popover content={Expert} placement="bottom" title="자신 있습니다">  <Row
                 justify="space-around"
                 data-aos="slide-up"
@@ -51,7 +54,7 @@ const Skill = () => {
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/css3.png"
-                        alt="html5"
+                        alt="css3"
                         width={150}
                         height={150}
                     />
@@ -60,6 +63,14 @@ const Skill = () => {
                     <Image
                         src="/img/logo/jquery.png"
                         alt="jquery"
+                        width={150}
+                        height={150}
+                    />
+                </Col>
+                <Col xs={8} sm={5} md={3}>
+                    <Image
+                        src="/img/logo/sass.png"
+                        alt="sass"
                         width={150}
                         height={150}
                     />
@@ -76,7 +87,15 @@ const Skill = () => {
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/js.png"
-                        alt="html5"
+                        alt="vanillajs"
+                        width={150}
+                        height={150}
+                    />
+                </Col>
+                <Col xs={8} sm={5} md={3}>
+                    <Image
+                        src="/img/logo/es6.png"
+                        alt="es6"
                         width={150}
                         height={150}
                     />
@@ -85,7 +104,7 @@ const Skill = () => {
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/react.png"
-                        alt="html5"
+                        alt="react"
                         width={150}
                         height={150}
                     />
@@ -94,7 +113,7 @@ const Skill = () => {
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/redux.png"
-                        alt="html5"
+                        alt="redux"
                         width={150}
                         height={150}
                     />
@@ -102,7 +121,7 @@ const Skill = () => {
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/nodejs.png"
-                        alt="html5"
+                        alt="nodejs"
                         width={150}
                         height={150}
                     />
@@ -110,7 +129,7 @@ const Skill = () => {
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/git.png"
-                        alt="html5"
+                        alt="git"
                         width={150}
                         height={150}
                     />
@@ -125,7 +144,7 @@ const Skill = () => {
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/expressjs.png"
-                        alt="html5"
+                        alt="expressjs"
                         width={150}
                         height={150}
                     />
@@ -133,7 +152,7 @@ const Skill = () => {
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/mysql.png"
-                        alt="html5"
+                        alt="mysql"
                         width={150}
                         height={150}
                     />
@@ -141,16 +160,15 @@ const Skill = () => {
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/react-native.png"
-                        alt="html5"
+                        alt="react-native"
                         width={150}
                         height={150}
                     />
                 </Col>
-
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/webpack.png"
-                        alt="html5"
+                        alt="webpack"
                         width={150}
                         height={150}
                     />
@@ -158,7 +176,7 @@ const Skill = () => {
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/nginx.png"
-                        alt="html5"
+                        alt="nginx"
                         width={150}
                         height={150}
                     />
@@ -166,7 +184,7 @@ const Skill = () => {
                 <Col xs={8} sm={5} md={3}>
                     <Image
                         src="/img/logo/php.png"
-                        alt="html5"
+                        alt="php"
                         width={150}
                         height={150}
                     />

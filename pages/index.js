@@ -20,9 +20,7 @@ const Index = () => {
                 </SlideStyle>
             </Slide>
             <Slide>
-                <SlideStyle className="basic-layout-background">
-                    <About />
-                </SlideStyle>
+                <About />
             </Slide>
             <Slide>
                 <SlideStyle className="basic-layout-background">

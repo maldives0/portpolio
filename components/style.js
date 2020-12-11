@@ -9,9 +9,9 @@ export const GlobalLayout = () => (
     .ant-menu-item,
     ant-menu-item ant-menu-item-selected {
     padding:0 15px !important;
-  }
-  .site-sider-layout,
-  ant-layout-sider ant-layout-sider-dark site-sider-layout {
+    }
+    .site-sider-layout,
+     ant-layout-sider ant-layout-sider-dark site-sider-layout {
     background: #fff;
     width: 150px !important;
     max-width:150px !important;
@@ -21,12 +21,13 @@ export const GlobalLayout = () => (
     left:0;
     z-index:99;
   }
-  .basic-layout-background{
+   .basic-layout-background{
     background:#f0f2f5;
-  }
-  .ant-row{
+   }
+
+    .ant-row{
     margin-right:0 !important;
-  }
+   }
  
       .ant-drawer-right {
         overflow:hidden;
@@ -60,11 +61,16 @@ display: flex;
 justify-content: center;
 align-items:center;
 flex-direction: column;
-height:100%;
 position:relative;
 top:0;
 left:0;
 padding: 5% 0 5% 170px;
+height:100%; 
+.home-layout-background{
+  background:no-repeat url('/img/wall-e-meets-mac.jpg') center/100% 100%;
+  width:100%;
+  height:100%; 
+}
 `;
 export const ContactFlex = styled.div`
 display: flex;
@@ -90,23 +96,22 @@ align-items:center;
 export const ContactLayout = () => (
   <Global
     styles={css`    
-    .contact-list-style{
+.contact-list-style{
       display: flex;
       justify-content: center;
       align-items:center;
       font-size: 20px;
     }
-    .ant-row{
+.ant-row{
       justify-content: center;
     align-items: center;
     }
-    
-        .message-button-display{
+.message-button-display{
           margin-top:25px;
           display: flex;
         justify-content: center;
         }
-        .site-drawer-render-in-current-wrapper{
+.site-drawer-render-in-current-wrapper{
           margin-top : 20px;
           font-size: 20px;
           text-align:center;
@@ -114,11 +119,11 @@ export const ContactLayout = () => (
           width:400px;
           padding:15px;
         }
-        .ant-card-head-title{
+.ant-card-head-title{
           font-size:20px;
           text-align: center;
         }
-        .ant-card-body{
+.ant-card-body{
           height:30%;
          padding:14px;
          font-size:13px;
@@ -130,11 +135,28 @@ export const ContactLayout = () => (
 export const AboutLayout = () => (
   <Global
     styles={css`
-  .ant-typography {
-  line-height: 2em;
+  .ant-typography-about,
+  h1.ant-typography.ant-typography-about,
+  h4.ant-typography.ant-typography-about {
+  line-height: 1.2em;
   text-align: center;
-  
+  color:#fff;    
 }     
+.about-layout-background{
+  background:no-repeat url('/img/human-science.jpg') center/100% 100%;
+  width:100%;
+  height:100%;  
+  display: flex;
+justify-content: center;
+align-items:center;
+flex-direction: column;
+padding: 0 0 5% 20%;
+
+}
+.ant-layout-footer{
+  color:#fff;
+  background:none;
+}
 
 `
     } />
