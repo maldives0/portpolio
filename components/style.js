@@ -64,13 +64,14 @@ flex-direction: column;
 position:relative;
 top:0;
 left:0;
-padding: 5% 0 5% 170px;
+padding: 0 0 5% 170px;
 height:100%; 
 .home-layout-background{
-  background:no-repeat url('/img/wall-e-meets-mac.jpg') center/100% 100%;
+  background:no-repeat url(/img/wall-e-meets-mac.jpg) center/100% 100%;
   width:100%;
   height:100%; 
 }
+
 `;
 export const ContactFlex = styled.div`
 display: flex;
@@ -143,7 +144,7 @@ export const AboutLayout = () => (
   color:#fff;    
 }     
 .about-layout-background{
-  background:no-repeat url('/img/human-science.jpg') center/100% 100%;
+  background:no-repeat url(/img/human-science.jpg) center/100% 100%;
   width:100%;
   height:100%;  
   display: flex;
@@ -188,6 +189,20 @@ export const ProjectLayout = () => (
         .ant-card{
   margin-right: 15px;
 }
+.modal-image-style{
+  margin:10px;
+  width:100%;
+}
+.ant-modal{
+  top:30px;
+}
+div.ant-descriptions.ant-descriptions-bordered{
+  width:200%;
+}
+.ant-descriptions-item-content{
+  line-height:2em;
+}
 `
+
     } />
 );

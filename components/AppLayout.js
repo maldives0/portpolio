@@ -63,7 +63,8 @@ const AppLayout = ({ children }) => {
     return (
         <Layout>
             <GlobalLayout />
-            <Sider className="site-sider-layout">
+            <Sider
+                className="site-sider-layout">
                 <Logo>
                     <Row gutter={3} style={{ display: 'block' }}>
                         <Image

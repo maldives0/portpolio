@@ -42,37 +42,37 @@ const Skill = () => {
             <Popover content={Expert} placement="bottom" title="자신 있습니다">  <Row
                 justify="space-around"
                 data-aos="slide-up"
-                gutter={8}>
-                <Col xs={8} sm={5} md={3}>
+                gutter={2}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/html5.png"
                         alt="html5"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/css3.png"
                         alt="css3"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/jquery.png"
                         alt="jquery"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/sass.png"
                         alt="sass"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
             </Row>
@@ -84,54 +84,54 @@ const Skill = () => {
                 justify="space-around"
                 data-aos="slide-up"
                 gutter={[24, 8]}>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/js.png"
                         alt="vanillajs"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/es6.png"
                         alt="es6"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
 
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/react.png"
                         alt="react"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
 
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/redux.png"
                         alt="redux"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/nodejs.png"
                         alt="nodejs"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/git.png"
                         alt="git"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
             </Row>
@@ -141,52 +141,52 @@ const Skill = () => {
                 justify="space-around"
                 data-aos="slide-up"
                 gutter={[24, 8]}>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/expressjs.png"
                         alt="expressjs"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/mysql.png"
                         alt="mysql"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/react-native.png"
                         alt="react-native"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/webpack.png"
                         alt="webpack"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/nginx.png"
                         alt="nginx"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
-                <Col xs={8} sm={5} md={3}>
+                <Col xs={8} sm={4} md={4}>
                     <Image
                         src="/img/logo/php.png"
                         alt="php"
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                     />
                 </Col>
             </Row>
