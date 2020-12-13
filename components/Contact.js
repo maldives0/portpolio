@@ -8,19 +8,14 @@ import {
     MailOutlined
 } from '@ant-design/icons';
 import { FormStyle, ContactLayout, ContactFlex } from './style';
+import useInput from '../hooks/useInput';
+import useSWR from 'swr';
+import axios from 'axios';
 const { Paragraph, Link
 } = Typography;
-const validateMessages = {
-    required: '${placeholder} is required!',
-    types: {
-        email: '${placeholder} is not a valid email!',
-        number: '${placeholder} is not a valid number!',
-    },
-    number: {
-        range: '${placeholder} must be between ${min} and ${max}',
-    },
-};
-const data = [
+
+
+const contactData = [
     {
         title: <EnvironmentOutlined />,
         content: <Paragraph copyable={{ tooltips: false }}>서울특별시 강동구 상암로</Paragraph>
@@ -53,18 +48,41 @@ const data = [
 ];
 
 const Contact = () => {
+    const { data } = useSWR('/messages');
     const [visible, setVisible] = useState(false);
-
+    const [nameValue, onChangeName, setNameValue] = useInput('');
+    const [emailValue, onChangeEmail, setEmailValue] = useInput('');
+    const [messageValue, onChangeMessage, setMessageValue] = useInput('');
     const showDrawer = useCallback(() => {
         setVisible(true);
     });
-
     const onCloseDrawer = useCallback(() => {
         setVisible(false);
     });
-    const onFinish = (values) => {
-        console.log(values);
-    };
+
+
+    const onSubmit = useCallback(async () => {
+        try {
+            if (!nameValue || !nameValue.trim()) {
+                return alert('성함을 작성한 후 버튼을 누르세요.');
+            }
+            if (!emailValue || !emailValue.trim()) {
+                return alert('이메일을 작성한 후 버튼을 누르세요.');
+            }
+            if (!messageValue || !messageValue.trim()) {
+                return alert('메세지를 작성한 후 버튼을 누르세요.');
+            }
+
+            await axios.post('/messages', { id: data[length - 1].id + 1, key: data[length - 1].key + 1, name: nameValue, email: emailValue, message: messageValue });
+            setNameValue('');
+            setEmailValue('');
+            setMessageValue('');
+            setVisible(false);
+
+        } catch (err) {
+            console.error(err);
+        }
+    }, [nameValue, emailValue, messageValue]);
 
     return (
         <ContactFlex data-aos-anchor="#trigger-contact"
@@ -77,11 +95,11 @@ const Contact = () => {
                         xs: 2,
                         sm: 2,
                         md: 3,
-                        xl: 6,
+                        xl: 3,
                         gutter: 8
                     }}
                     itemLayout="horizontal"
-                    dataSource={data}
+                    dataSource={contactData}
                     renderItem={item => (
                         <List.Item>
                             <Card title={item.title}>{item.content}</Card>
@@ -105,39 +123,42 @@ const Contact = () => {
                     visible={visible}
                     getContainer={false}
                     style={{ position: 'absolute' }}
-                    drawerStyle={{ width: '300px' }}
+                    drawerStyle={{ width: '500px' }}
                 >
                     <FormStyle>
-                        <Form wrapperCol={{ span: 20, }} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+                        <Form
+                            wrapperCol={{ span: 20 }} name="nest-messages"
+                            onFinish={onSubmit} >
                             <Form.Item>
                                 <Input
+                                    onChange={onChangeName}
+                                    value={nameValue}
                                     required
-                                    placeholder="당신의 성함을 알려주세요" />
-                            </Form.Item>
-                            <Form.Item
-                                rules={[
-                                    {
-                                        type: 'email',
-                                    },
-                                ]}
-                            >
-                                <Input
-                                    required
-                                    placeholder="이 이메일로 답장을 보낼게요" />
-                            </Form.Item>
-                            <Form.Item
-                            >
-                                <Input.TextArea
-                                    required
-                                    placeholder="하시고 싶은 말씀을 적어주세요"
-                                    style={{
-                                        width: '300px',
+                                    placeholder="당신의 성함을 알려주세요"
 
-                                        height: '200px'
-                                    }} />
+                                />
+                            </Form.Item>
+                            <Form.Item>
+                                <Input
+                                    onChange={onChangeEmail}
+                                    value={emailValue}
+                                    required
+                                    placeholder="이곳에 적어주신 이메일로 답장을 보낼게요"
+
+                                />
+                            </Form.Item>
+                            <Form.Item>
+                                <Input.TextArea
+                                    onChange={onChangeMessage}
+                                    value={messageValue}
+                                    required
+                                    placeholder="저에게 하시고 싶은 말씀을 적어주세요"
+
+                                />
                             </Form.Item>
                             <Form.Item wrapperCol={{ span: 20, offset: 8 }}>
-                                <Button type="primary" htmlType="submit">
+                                <Button
+                                    type="primary" htmlType="submit">
                                     보내기
             </Button>
                             </Form.Item>

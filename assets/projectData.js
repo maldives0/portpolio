@@ -43,7 +43,7 @@ const projectData = [
         skills: ['javascript, react, nodejs, nextjs, webpack'],
         func: 'scrolling, animation',
         details: 'antd design library로 화면을 구현하고 react-full-page, aos package를 이용하여 Fullpage scrolling과 animation기능을 더해보았습니다.',
-        img: '/img/wall-e-meets-mac.png',
+        img: '/img/wall-e-meets-mac.jpg',
         live: 'https://maldives0.github.io/portpolio/',
         git: 'https://github.com/maldives0/portpolio'
     },

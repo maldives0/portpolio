@@ -12,7 +12,7 @@ const Home = () => {
                 level={1}
                 style={{
                     textAlign: 'right',
-                    margin: '40% 20%', lineHeight: '2em'
+                    margin: '30% 20%', lineHeight: '2em'
                 }}
             >어서오세요!<br />
                 반갑습니다.

@@ -1,4 +1,4 @@
-import React, { useState, useCallback, } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Layout, Menu, Typography, Space, Row, Col } from 'antd';
 import {
@@ -9,12 +9,12 @@ import {
     FormOutlined,
     MailOutlined,
     HomeOutlined,
-
+    SettingOutlined,
 } from '@ant-design/icons';
-import { GlobalLayout, Logo, SlideUnCollapsed } from './style';
+import { GlobalLayout, Logo, } from './style';
 import Image from 'next/image';
 import { FullPage } from 'react-full-page';
-
+import Link from 'next/link';
 const { Sider, Footer, Content } = Layout;
 const { Text } = Typography;
 
@@ -34,26 +34,26 @@ const CustomControls = ({ getCurrentSlideIndex, scrollToSlide }) => {
             }}
         >
             <Menu.Item key="1" icon={<HomeOutlined />}>
-                Home
-</Menu.Item>
+                <Link href="/"><a>Home</a></Link>
+            </Menu.Item>
             <Menu.Item key="2" icon={<UserOutlined />}>
-                About
-</Menu.Item>
+                <Link href="/"><a>About</a></Link>
+            </Menu.Item>
             <Menu.Item key="3" icon={<AppstoreAddOutlined />}>
-                Tech Skills
-</Menu.Item>
+                <Link href="/"><a>Tech Skills</a></Link>
+            </Menu.Item>
             <Menu.Item key="4" icon={<BulbOutlined />}>
-                Project
-</Menu.Item>
+                <Link href="/"><a>Project</a></Link>
+            </Menu.Item>
             <Menu.Item key="5" icon={<FormOutlined />}>
-                Experience
-</Menu.Item>
+                <Link href="/"><a>Experience</a></Link>
+            </Menu.Item>
             <Menu.Item key="6" icon={<BankOutlined />}>
-                Education
-</Menu.Item>
+                <Link href="/"><a>Education</a></Link>
+            </Menu.Item>
             <Menu.Item key="7" icon={<MailOutlined />}>
-                Contact
-</Menu.Item>
+                <Link href="/"><a>Contact</a></Link>
+            </Menu.Item>
         </Menu>
 
     );
@@ -65,6 +65,9 @@ const AppLayout = ({ children }) => {
             <GlobalLayout />
             <Sider
                 className="site-sider-layout">
+                <div style={{ float: 'right' }}>
+                    <Link href="/admin"><a><SettingOutlined /></a></Link>
+                </div>
                 <Logo>
                     <Row gutter={3} style={{ display: 'block' }}>
                         <Image

@@ -4,6 +4,10 @@ import Proptypes from 'prop-types';
 import 'antd/dist/antd.css';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import { SWRConfig } from 'swr';
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:3031';
+
 const Portpolio = ({ Component }) => {
 
     useEffect(() => {
@@ -18,7 +22,14 @@ const Portpolio = ({ Component }) => {
             <Head>
                 <title>Juyoung Jung</title>
             </Head>
-            <Component />
+            <SWRConfig
+                value={{
+                    dedupingInterval: 5000,
+                    fetcher: (url) => axios(url).then(r => r.data)
+                }}
+            >
+                <Component />
+            </SWRConfig>
         </>
     );
 };

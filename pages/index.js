@@ -8,8 +8,8 @@ import Project from '../components/Project';
 import Education from '../components/Education';
 import Contact from '../components/Contact';
 import { Slide } from 'react-full-page';
-import { SlideStyle } from '../components/style';
-import { GlobalLayout } from '../components/style';
+import { SlideStyle, GlobalLayout } from '../components/style';
+
 const Index = () => {
     return (
         <AppLayout>

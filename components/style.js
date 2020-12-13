@@ -28,16 +28,7 @@ export const GlobalLayout = () => (
     .ant-row{
     margin-right:0 !important;
    }
- 
-      .ant-drawer-right {
-        overflow:hidden;
-      }
-      .ant-drawer-right.ant-drawer-open .ant-drawer-content-wrapper{
-        width:300px !important;
-      }
-      .ant-drawer-body{
-       overflow:hidden;
-      }
+      
              `
     } />
 );
@@ -87,47 +78,59 @@ display: flex;
 justify-content: center;
 align-items:center;
 .ant-input{
-  width:90%;
+  width:320px;
+  height:40px;
 }
-.textarea.ant-input{
+.ant-form-item textarea.ant-input{
   min-width:auto;
+  width:400px;
+  height:300px;
 }
     
 `
 export const ContactLayout = () => (
   <Global
     styles={css`    
-.contact-list-style{
+      .contact-list-style{
       display: flex;
       justify-content: center;
       align-items:center;
       font-size: 20px;
     }
-.ant-row{
+      .ant-row{
       justify-content: center;
-    align-items: center;
+      align-items: center;
     }
-.message-button-display{
+      .message-button-display{
           margin-top:25px;
           display: flex;
         justify-content: center;
         }
-.site-drawer-render-in-current-wrapper{
-          margin-top : 20px;
+        .ant-drawer-right {
+          overflow:hidden;
+        }
+        .ant-drawer-right.ant-drawer-open .ant-drawer-content-wrapper{
+          width:500px !important;
+        }
+        .ant-drawer-body{
+         overflow:hidden;
+        }
+       .site-drawer-render-in-current-wrapper{
+          margin-top : 10%;
           font-size: 20px;
           text-align:center;
           border: 1px solid #fff;
-          width:400px;
-          padding:15px;
+          padding:5%;
         }
-.ant-card-head-title{
+        .ant-card-head-title{
           font-size:20px;
           text-align: center;
         }
-.ant-card-body{
+      .ant-card-body{
           height:30%;
          padding:14px;
          font-size:13px;
+         text-align:center;
         }
              `
     } />
@@ -148,16 +151,13 @@ export const AboutLayout = () => (
   width:100%;
   height:100%;  
   display: flex;
-justify-content: center;
-align-items:center;
-flex-direction: column;
-padding: 0 0 5% 20%;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+  padding: 3% 0 15% 20%;
 
 }
-.ant-layout-footer{
-  color:#fff;
-  background:none;
-}
+
 
 `
     } />

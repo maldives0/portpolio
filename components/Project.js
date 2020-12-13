@@ -6,7 +6,7 @@ import { GithubOutlined, SelectOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import { ProjectLayout } from './style';
 const { Title, Link } = Typography;
-import projectData from '../assets/data';
+import projectData from '../assets/projectData';
 
 const Project = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
