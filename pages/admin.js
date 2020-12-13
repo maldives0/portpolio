@@ -7,15 +7,17 @@ import AppLayout from '../components/AppLayout';
 import MessageList from '../components/MessageList';
 import useInput from '../hooks/useInput';
 import { LockOutlined } from '@ant-design/icons';
-import ADMIN_PASSWORD from '../password';
+
 import { SlideStyle } from '../components/style';
+const dotenv = require('dotenv');
+dotenv.config();
 const Admin = () => {
 
     const [password, onChangePassword] = useInput('');
     const [showList, setShowList] = useState(true);
 
     const onSubmitForm = useCallback(() => {
-        if (password !== ADMIN_PASSWORD) {
+        if (password !== process.env.ADMIN_PASSWORD) {
             alert('관리자만 접근할 수 있습니다!');
         } else {
             setShowList(true);

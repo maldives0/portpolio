@@ -1,0 +1,8 @@
+node_modules
+/test
+.next
+password.js
+.env
+node_modules/
+test/
+.next/
