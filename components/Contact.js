@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Typography, List, Card, Form, Input, Drawer, Button } from 'antd';
+import { Typography, List, Card, Form, Input, Drawer, Button, message } from 'antd';
 import {
     EnvironmentOutlined,
     PhoneOutlined,
@@ -9,9 +9,8 @@ import {
 } from '@ant-design/icons';
 import { FormStyle, ContactLayout, ContactFlex } from './style';
 import useInput from '../hooks/useInput';
-import useSWR, { mutate } from 'swr';
-import fetch from '../hooks/fetch'
-
+import { backUrl } from '../config/url';
+import axios from 'axios';
 const { Paragraph, Link
 } = Typography;
 
@@ -47,11 +46,16 @@ const contactData = [
 
     },
 ];
+const validateMessages = {
+    required: '${name}을 적어주세요!',
+    types: {
+        email: '${name} 이메일 형식에 맞지 않습니다!',
 
+    },
+
+};
 const Contact = () => {
-    const { data } = useSWR('/api/messages', fetch);
-    const [formIdx, setFormIdx] = useState(0);
-    console.log(data);
+
     const [visible, setVisible] = useState(false);
     const [nameValue, onChangeName, setNameValue] = useInput('');
     const [emailValue, onChangeEmail, setEmailValue] = useInput('');
@@ -62,7 +66,6 @@ const Contact = () => {
     const onCloseDrawer = useCallback(() => {
         setVisible(false);
     });
-
 
     const onSubmit = useCallback(async () => {
 
@@ -77,16 +80,13 @@ const Contact = () => {
                 return alert('메세지를 작성한 후 버튼을 누르세요.');
             }
 
-            const newMsg = { key: formIdx + 1, name: nameValue, email: emailValue, message: messageValue };
-            mutate('/api/messages', await fetch('/api/messages', {
-                method: 'POST',
-                body: JSON.stringify(newMsg, ['key', 'name', 'email', 'message'])
-            }))
+            const newMsg = { name: nameValue, email: emailValue, message: messageValue };
+            await axios.post(`${backUrl}/messages`, newMsg, { withCredentials: true });
             setNameValue('');
             setEmailValue('');
             setMessageValue('');
             setVisible(false);
-            setFormIdx(prev => prev + 1);
+            message.success('빠른 시일 내에 확인 후 연락드리겠습니다!');
 
         } catch (err) {
             console.error(err);
@@ -99,7 +99,6 @@ const Contact = () => {
             <ContactLayout />
             <div className="contact-list-style" data-aos="fade-up" >
                 <List
-
                     grid={{
                         xs: 2,
                         sm: 2,
@@ -136,11 +135,16 @@ const Contact = () => {
                 >
                     <FormStyle>
                         <Form
-                            initialValues={formIdx}
+                            validateMessages={validateMessages}
                             wrapperCol={{ span: 20 }} name="nest-messages"
                             onFinish={onSubmit} >
-                            <Form.Item>
+                            <Form.Item
+                                name="이름"
+                                rules={[
+                                    { required: true, },
+                                ]}>
                                 <Input
+
                                     onChange={onChangeName}
                                     value={nameValue}
                                     required
@@ -148,7 +152,13 @@ const Contact = () => {
 
                                 />
                             </Form.Item>
-                            <Form.Item>
+                            <Form.Item
+                                name="email"
+                                rules={[
+                                    { type: 'email', },
+                                    { required: true, },
+                                ]}
+                            >
                                 <Input
                                     onChange={onChangeEmail}
                                     value={emailValue}
@@ -157,7 +167,12 @@ const Contact = () => {
 
                                 />
                             </Form.Item>
-                            <Form.Item>
+                            <Form.Item
+                                name="message"
+                                rules={[
+                                    { required: true, },
+                                ]}
+                            >
                                 <Input.TextArea
                                     onChange={onChangeMessage}
                                     value={messageValue}

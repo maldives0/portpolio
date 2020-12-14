@@ -4,9 +4,6 @@ import Proptypes from 'prop-types';
 import 'antd/dist/antd.css';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import { SWRConfig } from 'swr';
-import axios from 'axios';
-// axios.defaults.baseURL = '/api/messages';
 
 const Portpolio = ({ Component }) => {
 
@@ -23,14 +20,6 @@ const Portpolio = ({ Component }) => {
                 <title>Juyoung Jung</title>
             </Head>
             <Component />
-            <SWRConfig
-                value={{
-                    dedupingInterval: 5000,
-                    fetcher: (url) => axios(url).then(r => r.data)
-                }}
-            >
-
-            </SWRConfig>
         </>
     );
 };

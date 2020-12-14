@@ -1,11 +1,16 @@
 import React, { useCallback, useState } from 'react';
 import useSWR, { mutate, trigger } from 'swr';
 import { Table, Divider, Button } from 'antd';
-
-import fetch from '../hooks/fetch'
+import { backUrl } from '../config/url';
+import axios from 'axios';
+const fetcher = (url) => axios.get(url, { withCredentials: true }).then((result) => result.data);
 const MessageList = () => {
-    const { data } = useSWR('/api/messages', fetch);
-    console.log(data);
+    const { data, error } = useSWR(`${backUrl}/messages`, fetcher);
+    if (error) {
+        console.error(error);
+        return (<div>데이터 로딩 중 에러가 발생했습니다</div>);
+    }
+
     const columns = [
         {
             title: 'Key',
@@ -24,32 +29,39 @@ const MessageList = () => {
             dataIndex: 'message',
         },
     ];
-    const [selectedKey, setSelectedKey] = useState('');
+    const dataSource = data?.map(v => ({
+        key: v.id,
+        name: v.name,
+        email: v.email,
+        message: v.message,
+    }));
+
+    const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+    const onSelectChange = useCallback((selectedRowKeys) => {
+        setSelectedRowKeys(selectedRowKeys);
+    }, []);
+
+    const onDelete = useCallback(async () => {
+        try {
+            const url = `${backUrl}/messages`;
+            mutate(url, data?.filter(c => c.id !== selectedRowKeys), false);
+            await axios.delete(`${backUrl}/messages/${selectedRowKeys}`, { withCredentials: true });
+            trigger(url);
+        }
+        catch (err) {
+            console.error(err);
+        }
+    }, [selectedRowKeys]);
+
     const rowSelection = {
-        onChange: (selectedRowKeys, selectedRows) => {
-            console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-            setSelectedKey(selectedRows);
-        },
+        selectedRowKeys,
+        onChange: onSelectChange,
         getCheckboxProps: (record) => ({
             disabled: record.name === 'Disabled User',
             // Column configuration not to be checked
             name: record.name,
         }),
     };
-    const onDelete = useCallback(async () => {
-        try {
-            console.log(selectedKey);
-            mutate('/api/messages', await fetch('/api/messages', {
-                method: 'DELETE',
-                body: JSON.stringify(selectedKey)
-            }))
-
-            trigger('/api/messages');
-        }
-        catch (err) {
-            console.error(err);
-        }
-    }, []);
     return (
         <div>
             <Divider />
@@ -59,7 +71,8 @@ const MessageList = () => {
                     ...rowSelection,
                 }}
                 columns={columns}
-                dataSource={data}
+                dataSource={dataSource}
+
             />
             <Button onClick={onDelete}>
                 Delete

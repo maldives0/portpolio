@@ -12,18 +12,12 @@
     "antd": "^4.9.1",
     "aos": "^2.3.4",
     "axios": "^0.21.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "immer": "^7.0.14",
     "isomorphic-unfetch": "^3.1.0",
-    "mysql2": "^2.2.5",
-    "next": "^10.0.3",
+     "next": "^10.0.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-full-page": "^0.1.11",
-    "sequelize": "^6.3.5",
-    "sequelize-cli": "^6.2.0",
+    "react-full-page": "^0.1.11",   
     "swr": "^0.3.9"
   },
   "devDependencies": {
@@ -34,13 +28,13 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "babel-eslint": "^10.1.0",
-    "json-server": "^0.16.3"
+    "json-server": "^0.16.3",
+    "nodemon": "^2.0.6"
   },
   "scripts": {
     "dev": "next -p 3030",
     "build": "next build",
-    "start": "next start",
-    "mock-server": "json-server --watch ./db.json -p 3031"
+    "start": "next start"   
   },
   "repository": {
     "type": "git",
