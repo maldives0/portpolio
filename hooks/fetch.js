@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 
-export default async function (...args) {
+const newFetch = async (...args) => {
     const res = await fetch(...args)
     return res.json()
 }
+export default newFetch;

@@ -55,7 +55,7 @@ flex-direction: column;
 position:relative;
 top:0;
 left:0;
-padding: 0 0 5% 170px;
+padding: 2% 0 3% 170px;
 height:100%; 
 .home-layout-background{
   background:no-repeat url(/img/wall-e-meets-mac.jpg) center/100% 100%;

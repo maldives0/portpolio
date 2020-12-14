@@ -26,7 +26,7 @@ export default (req, res) => {
         console.log('key:', body);
         if (!shouldFail()) {
 
-            // messages.filter(c => c.key !== body.selectedKey);
+            messages.filter(c => c.key !== body);
         }
 
         return res.json(messages);

@@ -50,4 +50,10 @@ const Index = () => {
         </AppLayout>
     );
 };
+
+// export async function getStaticProps(context) {
+//     console.log('getStaticProps', context);
+
+//     return ();
+// };
 export default Index;

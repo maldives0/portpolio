@@ -19,7 +19,7 @@ const { Paragraph, Link
 const contactData = [
     {
         title: <EnvironmentOutlined />,
-        content: <Paragraph copyable={{ tooltips: false }}>서울특별시 강동구 상암로</Paragraph>
+        content: <Paragraph copyable={{ tooltips: false }}>서울특별시 강동구</Paragraph>
     },
     {
         title: <PhoneOutlined />,
@@ -136,7 +136,7 @@ const Contact = () => {
                 >
                     <FormStyle>
                         <Form
-                            initialValue={formIdx}
+                            initialValues={formIdx}
                             wrapperCol={{ span: 20 }} name="nest-messages"
                             onFinish={onSubmit} >
                             <Form.Item>

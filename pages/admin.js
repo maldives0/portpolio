@@ -1,16 +1,13 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import Proptypes from 'prop-types';
-import axios from 'axios';
-import useSWR, { mutate, trigger } from 'swr';
-import { Form, Input, Button, Row, } from 'antd';
+import React, { useState, useCallback } from 'react';
+
+import { Form, Input, Button, } from 'antd';
 import AppLayout from '../components/AppLayout';
 import MessageList from '../components/MessageList';
 import useInput from '../hooks/useInput';
 import { LockOutlined } from '@ant-design/icons';
 import ADMIN_PASSWORD from '../password';
 import { SlideStyle } from '../components/style';
-// const dotenv = require('dotenv');
-// dotenv.config();
+
 const Admin = () => {
 
     const [password, onChangePassword] = useInput('');

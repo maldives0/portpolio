@@ -40,9 +40,9 @@ const projectData = [
         title: "juyoung's portpolio",
         desc: '현재 보고 계신 React로 만든 포트폴리오입니다.',
         term: '20.12 - 20.12',
-        skills: ['javascript, react, nodejs, nextjs, webpack'],
-        func: 'scrolling, animation',
-        details: 'antd design library로 화면을 구현하고 react-full-page, aos package를 이용하여 Fullpage scrolling과 animation기능을 더해보았습니다.',
+        skills: ['javascript, react, nodejs, nextjs'],
+        func: 'scrolling, animation, 메세지보내기',
+        details: 'antd design library로 화면을 구현하고 react-full-page, aos package를 이용하여 Fullpage scrolling과 animation기능을 더해보았습니다. swr을 사용해 보낸 메세지 데이터를 admin 페이지에서 fetch할 수 있도록 했습니다.',
         img: '/img/wall-e-meets-mac.jpg',
         live: 'https://maldives0.github.io/portpolio/',
         git: 'https://github.com/maldives0/portpolio'
