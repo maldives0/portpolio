@@ -5,7 +5,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 
 
-module.exports = withBundleAnalyzer({
+module.exports = ({
 
     distDir: '.next',
     webpack(config, { webpack }) {
