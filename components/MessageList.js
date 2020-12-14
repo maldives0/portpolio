@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Proptypes from 'prop-types';
 import axios from 'axios';
 import useSWR, { mutate, trigger } from 'swr';
 import { Table, Divider, Button } from 'antd';
-const MessageList = ({ messagesFromServer }) => {
-    const { data } = useSWR('/messages', { initialData: messagesFromServer });
+
+import fetch from '../hooks/fetch'
+const MessageList = () => {
+    const { data } = useSWR('/api/messages', fetch);
     console.log(data);
     const columns = [
         {
-            title: 'Id',
-            dataIndex: 'id',
+            title: 'Key',
+            dataIndex: 'key',
         },
         {
             title: 'Name',
@@ -28,7 +30,7 @@ const MessageList = ({ messagesFromServer }) => {
     const rowSelection = {
         onChange: (selectedRowKeys, selectedRows) => {
             console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-            setSelectedKey(selectedRowKeys);
+            setSelectedKey(selectedRows);
         },
         getCheckboxProps: (record) => ({
             disabled: record.name === 'Disabled User',
@@ -36,6 +38,20 @@ const MessageList = ({ messagesFromServer }) => {
             name: record.name,
         }),
     };
+    const onDelete = useCallback(async () => {
+        try {
+            console.log(selectedKey);
+            mutate('/api/messages', await fetch('/api/messages', {
+                method: 'DELETE',
+                body: JSON.stringify(selectedKey)
+            }))
+
+            trigger('/api/messages');
+        }
+        catch (err) {
+            console.error(err);
+        }
+    }, []);
     return (
         <div>
             <Divider />
@@ -47,14 +63,7 @@ const MessageList = ({ messagesFromServer }) => {
                 columns={columns}
                 dataSource={data}
             />
-            <Button
-                onClick={async () => {
-                    const url = '/messages';
-                    mutate(url, data.filter(c => c.key !== selectedKey), false);
-                    await axios.delete(`/messages/${selectedKey}`);
-                    trigger(url);
-                }}
-            >
+            <Button onClick={onDelete}>
                 Delete
             </Button>
         </div>

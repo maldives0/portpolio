@@ -9,8 +9,9 @@ import {
 } from '@ant-design/icons';
 import { FormStyle, ContactLayout, ContactFlex } from './style';
 import useInput from '../hooks/useInput';
-import useSWR from 'swr';
-import axios from 'axios';
+import useSWR, { mutate } from 'swr';
+import fetch from '../hooks/fetch'
+
 const { Paragraph, Link
 } = Typography;
 
@@ -48,7 +49,9 @@ const contactData = [
 ];
 
 const Contact = () => {
-    const { data } = useSWR('/messages');
+    const { data } = useSWR('/api/messages', fetch);
+    const [formIdx, setFormIdx] = useState(0);
+    console.log(data);
     const [visible, setVisible] = useState(false);
     const [nameValue, onChangeName, setNameValue] = useInput('');
     const [emailValue, onChangeEmail, setEmailValue] = useInput('');
@@ -62,6 +65,7 @@ const Contact = () => {
 
 
     const onSubmit = useCallback(async () => {
+
         try {
             if (!nameValue || !nameValue.trim()) {
                 return alert('성함을 작성한 후 버튼을 누르세요.');
@@ -73,11 +77,16 @@ const Contact = () => {
                 return alert('메세지를 작성한 후 버튼을 누르세요.');
             }
 
-            await axios.post('/messages', { id: data[length - 1].id + 1, key: data[length - 1].key + 1, name: nameValue, email: emailValue, message: messageValue });
+            const newMsg = { key: formIdx + 1, name: nameValue, email: emailValue, message: messageValue };
+            mutate('/api/messages', await fetch('/api/messages', {
+                method: 'POST',
+                body: JSON.stringify(newMsg, ['key', 'name', 'email', 'message'])
+            }))
             setNameValue('');
             setEmailValue('');
             setMessageValue('');
             setVisible(false);
+            setFormIdx(prev => prev + 1);
 
         } catch (err) {
             console.error(err);
@@ -127,6 +136,7 @@ const Contact = () => {
                 >
                     <FormStyle>
                         <Form
+                            initialValue={formIdx}
                             wrapperCol={{ span: 20 }} name="nest-messages"
                             onFinish={onSubmit} >
                             <Form.Item>
