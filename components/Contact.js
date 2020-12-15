@@ -81,7 +81,7 @@ const Contact = () => {
             }
 
             const newMsg = { name: nameValue, email: emailValue, message: messageValue };
-            await axios.post(`${backUrl}/messages`, newMsg, { withCredentials: true });
+            await axios.post(`${backUrl}/api/messages`, newMsg, { withCredentials: true });
             setNameValue('');
             setEmailValue('');
             setMessageValue('');
