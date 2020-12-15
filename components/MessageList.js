@@ -1,11 +1,12 @@
 import React, { useCallback, useState } from 'react';
 import useSWR, { mutate, trigger } from 'swr';
 import { Table, Divider, Button } from 'antd';
+import Proptypes from 'prop-types';
 import { backUrl } from '../config/url';
 import axios from 'axios';
 const fetcher = (url) => axios.get(url, { withCredentials: true }).then((result) => result.data);
-const MessageList = () => {
-    const { data, error } = useSWR(`${backUrl}/messages`, fetcher);
+const MessageList = ({ setShowList }) => {
+    const { data, error } = useSWR(`${backUrl}/messages`, fetcher, { revalidateOnFocus: true });
     if (error) {
         console.error(error);
         return (<div>데이터 로딩 중 에러가 발생했습니다</div>);
@@ -52,6 +53,9 @@ const MessageList = () => {
             console.error(err);
         }
     }, [selectedRowKeys]);
+    const onLogout = useCallback(() => {
+        setShowList(false);
+    }, []);
 
     const rowSelection = {
         selectedRowKeys,
@@ -64,6 +68,9 @@ const MessageList = () => {
     };
     return (
         <div>
+            <Button onClick={onLogout}>
+                logout
+            </Button>
             <Divider />
             <Table
                 rowSelection={{
@@ -81,5 +88,7 @@ const MessageList = () => {
     );
 
 };
-
+MessageList.propTypes = {
+    setShowList: Proptypes.func.isRequired,
+};
 export default MessageList;

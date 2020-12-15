@@ -1,12 +1,13 @@
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-    enable: process.env.ANALYZE === 'true',
+    enabled: process.env.ANALYZE === 'true',
 });
 
 
 
 module.exports = withBundleAnalyzer({
     distDir: '.next',
+
     webpack(config, { webpack }) {
         const prod = process.env.NODE_ENV === 'production';
         const newConfig = {
@@ -19,3 +20,5 @@ module.exports = withBundleAnalyzer({
         return newConfig;
     },
 });
+
+

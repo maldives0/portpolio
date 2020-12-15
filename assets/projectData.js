@@ -44,7 +44,7 @@ const projectData = [
         func: 'scrolling, animation, 메세지보내기',
         details: 'antd design library로 화면을 구현하고 react-full-page, aos package를 이용하여 Fullpage scrolling과 animation기능을 더해보았습니다. nodemailer를 사용해 방문자가 보낸 메세지 데이터를 메일로 확인 후 빠르게 답변할 수 있도록 back-end server를 설계했습니다. front-end server에서는 swr을 사용해 admin 페이지에서 확인할 수 있도록 했습니다.',
         img: '/img/wall-e-meets-mac.jpg',
-        live: 'https://maldives0.github.io/portpolio/',
+        live: 'https://portpolio.now.sh/',
         git: 'https://github.com/maldives0/portpolio'
     },
 ]

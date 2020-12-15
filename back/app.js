@@ -11,8 +11,7 @@ const app = express();
 dotenv.config();
 const prod = process.env.NODE_ENV === 'production';
 const port = prod ? 80 : 3031;
-const backUrl = prod ? "https://maldives0.github.io/portpolio/api" : "http://localhost:3031";
-const frontUrl = prod ? "https://maldives0.github.io/portpolio/" : "http://localhost:3030";
+const frontUrl = prod ? "https://portpolio.now.sh/" : "http://localhost:3030";
 
 app.use(cors({
     origin: frontUrl,
@@ -33,6 +32,21 @@ app.get('/api/messages', async (req, res, next) => {
         const messages = await Message.findAll();
 
         res.status(200).json(messages);
+    }
+    catch (err) {
+        console.error(err);
+        next(err);
+    }
+});
+app.post('/api/admin/:password', async (req, res, next) => {
+    //GET/messages
+    try {
+        if (req.params.password === process.env.ADMIN_PASSWORD) {
+            res.status(200).json(process.env.ADMIN_PASSWORD);;
+        } else {
+            res.status(200).json(null);
+        }
+
     }
     catch (err) {
         console.error(err);

@@ -1,24 +1,31 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 import { Form, Input, Button, } from 'antd';
 import AppLayout from '../components/AppLayout';
 import MessageList from '../components/MessageList';
 import useInput from '../hooks/useInput';
 import { LockOutlined } from '@ant-design/icons';
-import ADMIN_PASSWORD from '../password';
 import { SlideStyle } from '../components/style';
+import { backUrl } from '../config/url';
+import axios from 'axios';
+import useSWR, { mutate, trigger } from 'swr';
 
+const fetcher = (url) => axios.post(url, { withCredentials: true }).then((result) => result.data);
 const Admin = () => {
-
+    const [showList, setShowList] = useState(false);
     const [password, onChangePassword] = useInput('');
-    const [showList, setShowList] = useState(true);
 
-    const onSubmitForm = useCallback(() => {
-        if (password !== ADMIN_PASSWORD) {
-            alert('관리자만 접근할 수 있습니다!');
-        } else {
+    const url = `${backUrl}/admin/${password}/`;
+    const { data, error } = useSWR(url, fetcher, { dedupingInterval: 5000 });
+    const onSubmitForm = useCallback(async () => {
+        mutate(url, await fetcher(url, axios.post(url, { withCredentials: true })));
+        if (data === password) {
             setShowList(true);
+        } else {
+            alert('관리자만 접근할 수 있는 페이지입니다!');
+            console.error(error);
         }
+
     }, [password]);
 
 
@@ -26,7 +33,7 @@ const Admin = () => {
         <AppLayout>
             <SlideStyle className="basic-layout-background">
 
-                {showList ? (<MessageList />) : (
+                {showList ? (<MessageList setShowList={setShowList} />) : (
                     <Form
                         name="basic"
                         initialValues={{
