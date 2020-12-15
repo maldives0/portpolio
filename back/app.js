@@ -10,7 +10,7 @@ const cors = require('cors');
 const app = express();
 dotenv.config();
 const prod = process.env.NODE_ENV === 'production';
-const port = prod ? 80 : 3031;
+
 const frontUrl = prod ? "https://portpolio-five.vercel.app" : "http://localhost:3030";
 
 app.use(cors({
@@ -129,6 +129,6 @@ app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error');
 });
-app.listen(port, () => {
-    console.log(`${port}에서 대기 중`);
+app.listen(3031, () => {
+    console.log(`3031포트에서 대기 중`);
 });
