@@ -8,7 +8,7 @@ import { LockOutlined } from '@ant-design/icons';
 import { SlideStyle } from '../components/style';
 import { backUrl } from '../config/url';
 import axios from 'axios';
-import useSWR, { mutate, trigger } from 'swr';
+import useSWR, { mutate } from 'swr';
 
 const fetcher = (url) => axios.post(url, { withCredentials: true }).then((result) => result.data);
 const Admin = () => {

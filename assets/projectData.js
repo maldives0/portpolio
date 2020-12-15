@@ -27,7 +27,7 @@ const projectData = [
         key: 'sns',
         title: "밀롱가에서의 경험을 공유하는 탱고인들을 위한 SNS, ymillonga sns version",
         desc: 'React, Next, Redux, Redux Saga, Express를 이용해 Fullstack으로 만든, 트위터의 기능을 가진 SNS 서비스입니다',
-        term: '20.11 - 20.12',
+        term: '20.10 - 20.12',
         skills: ['javascript, react, nodejs, nextjs, expressjs, mysql, webpack'],
         func: 'passport.js을 이용한 login, Google/Facebook OAuth, Infinite scrolling, 게시글 작성, 이미지 업로드, 좋아요/댓글/리트윗, 해시태그 검색, 유저 프로필 불러오기, SSR 등',
         details: 'React Hooks를 사용해 만든 세번째 프로젝트입니다. antd design library로 화면을 구현하고 Redux, Redux Saga와 연동한 뒤 백앤드에 node로 서버를 구축했습니다. Next로 SSR를 한 뒤 AWS에 배포하며 Fullstack으로 서비스를 만들어보았습니다.',
@@ -39,12 +39,12 @@ const projectData = [
         key: 'portpolio',
         title: "juyoung's portpolio",
         desc: '현재 보고 계신 React로 만든 포트폴리오입니다.',
-        term: '20.12 - 20.12',
+        term: '20.12.3 - 상시 업데이트 중 ',
         skills: ['javascript, react, nodejs, nextjs, expressjs, mysql'],
         func: 'scrolling, animation, 메세지보내기',
         details: 'antd design library로 화면을 구현하고 react-full-page, aos package를 이용하여 Fullpage scrolling과 animation기능을 더해보았습니다. nodemailer를 사용해 방문자가 보낸 메세지 데이터를 메일로 확인 후 빠르게 답변할 수 있도록 back-end server를 설계했습니다. front-end server에서는 swr을 사용해 admin 페이지에서 확인할 수 있도록 했습니다.',
         img: '/img/wall-e-meets-mac.jpg',
-        live: 'https://portpolio.now.sh/',
+        live: 'https://portpolio-five.vercel.app/',
         git: 'https://github.com/maldives0/portpolio'
     },
 ]

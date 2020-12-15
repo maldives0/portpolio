@@ -11,7 +11,7 @@ const app = express();
 dotenv.config();
 const prod = process.env.NODE_ENV === 'production';
 const port = prod ? 80 : 3031;
-const frontUrl = prod ? "https://portpolio.now.sh/" : "http://localhost:3030";
+const frontUrl = prod ? "https://portpolio-five.vercel.app" : "http://localhost:3030";
 
 app.use(cors({
     origin: frontUrl,
