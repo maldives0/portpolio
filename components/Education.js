@@ -5,12 +5,12 @@ const { Panel } = Collapse;
 const { Text, Title } = Typography;
 const Education = () => {
     return (
-        <>
-            <Title level={3}>
+        <div data-aos-anchor="#trigger-education">
+            <Title data-aos="fade-down" level={2} style={{ textAlign: 'center' }}>
                 저는 이런 길을 걸어왔습니다
                 </Title>
             <Collapse accordion defaultActiveKey={['1']}
-                style={{ textAlign: "left", fontSize: 17, marginTop: 10 }} >
+            >
                 <Panel header="Front-End Developing 독학" key="1">
                     <Text type="secondary" >기간 2020.06 ~ 현재</Text>
                     <br />
@@ -40,7 +40,7 @@ const Education = () => {
                     글이라는 재료를 가지고 새로운 창조물을 만들어내는 일의 매력을 알고 동화작가가 되는 꿈을 꾸었습니다.</Text>
                 </Panel>
             </Collapse>
-        </>
+        </div>
     );
 }
 export default Education;

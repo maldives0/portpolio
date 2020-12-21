@@ -22,7 +22,7 @@ export const GlobalLayout = () => (
   .menufold-layout{
     font-size: 2em;
     position:fixed;
-    left:20px;
+    left:27px;
     top:20px;
     z-index:1000;
   }
@@ -73,6 +73,14 @@ export const GlobalLayout = () => (
     background:no-repeat url(/img/wall-e-meets-mac.jpg) center/100% 100%;
     width:100%;
     height:100vh; 
+  }
+  .ant-collapse ant-collapse-icon-position-left{
+  font-size:15px;
+  margin-top:5px;
+  width:90%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   }
              `
     } />
@@ -207,8 +215,10 @@ export const ExperienceLayout = () => (
   .ant-card-cover{
   padding: 20px;
 }
+h2.ant-typography,
    h3.ant-typography{
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  text-align:center;
 }
     .ant-card{
   margin-right: 15px;
@@ -216,6 +226,7 @@ export const ExperienceLayout = () => (
 .ant-card-meta{
   font-size:11px;
 }
+
 `
     } />
 );
@@ -234,7 +245,11 @@ export const ProjectLayout = () => (
   text-align: center;
 }
 .ant-modal{
-  top:30px;
+  top:2%;
+  
+}
+.ant-modal-body{
+  padding:2%;
 }
 div.ant-descriptions.ant-descriptions-bordered{
   width:200%;

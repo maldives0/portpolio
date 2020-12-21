@@ -102,10 +102,10 @@ const Project = () => {
                         </div>) : null}
 
                         <Descriptions
-                            layout={isTabletPC ? "default" : "vertical"}
+                            layout={"vertical"}
                             bordered={true}
-                            size={isTabletPC ? "default" : "small"}
-                            column={{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }}
+                            size={"small"}
+                            column={{ xs: 1, sm: 2, md: 1 }}
                         >
                             <Descriptions.Item label="Term" span={2}>{seletedData.term}</Descriptions.Item>
                             <Descriptions.Item label="Using Skills">{seletedData.skills}</Descriptions.Item>

@@ -14,20 +14,22 @@ import {
     default as CopyOutlined,
 } from '@ant-design/icons/CopyOutlined';
 import { ExperienceLayout } from './style';
+import { useMediaQuery } from "react-responsive";
+
 const { Title } = Typography;
 
 const Experience = () => {
-
+    const isTabletPC = useMediaQuery({ query: "(min-width: 768px) " });
 
     return (
         <>
             <ExperienceLayout />
-            <Row xs={16} sm={12} md={8} style={{ textAlign: 'center' }}>
+            <Row xs={16} sm={12} md={8} >
                 <Title
                     data-aos="fade-up"
                     data-aos-duration="2000"
-                    level={3}
-                >회사에 필요하다면<br /> 저는 이런 일도 할 수 있습니다
+                    level={isTabletPC ? 2 : 3}
+                >회사에 필요하다면 저는 이런 일도 할 수 있습니다
                 </Title>
             </Row>
             <div data-aos="fade-down"

@@ -13,7 +13,7 @@ const About = () => {
             className={isTabletPC ? "about-layout-background-pc" : "about-layout-background-mobile"}>
             <AboutLayout />
             <Paragraph
-                style={isTabletPC ? { fontSize: 22, textAlign: 'center' } : { fontSize: 18, textAlign: 'center' }}
+                style={isTabletPC ? { fontSize: 22, textAlign: 'center', padding: '3%' } : { fontSize: 18, textAlign: 'center', padding: '3%' }}
                 data-aos="fade-down"
             >
                 <Text
@@ -38,7 +38,7 @@ const About = () => {
                 <Title
                     data-aos="fade-down"
                     className="ant-typography-about"
-                    level={isTabletPC ? 4 : 3}>
+                    level={4}>
                     제가 가진 프로그래밍 기술의 종류보다
                                </Title>
                 <Title
@@ -46,7 +46,7 @@ const About = () => {
                     data-aos-duration="4000"
                     data-aos-delay="100"
                     className="ant-typography-about"
-                    level={isTabletPC ? 1 : 2}
+                    level={isTabletPC ? 1 : 3}
                 >
                     고객을 이해하는 일을 첫째로 생각하는 <br /><br />
                     개발자 정주영입니다.

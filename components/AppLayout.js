@@ -38,7 +38,10 @@ import { useMediaQuery } from "react-responsive";
 const { Header, Sider, Footer, Content } = Layout;
 const { Text } = Typography;
 const collapsedStyle = {
-    position: 'fixed', top: 60, width: '38px', zIndex: 100, left: '14px', border: 'none'
+    position: 'fixed', top: 60, width: 150, zIndex: 100, left: '14px', border: 'none',
+};
+const basicStyle = {
+    position: 'fixed', bottom: '15%', left: 0, width: 200, zIndex: 100,
 };
 
 const CustomControls = (collapsed, setCollapsed) => ({ getCurrentSlideIndex, scrollToSlide }) => {
@@ -47,9 +50,7 @@ const CustomControls = (collapsed, setCollapsed) => ({ getCurrentSlideIndex, scr
     const onClickMenu = useCallback((e) => {
         scrollToSlide(e.key - 1);
     }, []);
-    const [currentStyle, setCurrentStyle] = useState({
-        position: 'fixed', bottom: '8%', left: 0, width: 200, zIndex: 100,
-    });
+    const [currentStyle, setCurrentStyle] = useState(basicStyle);
     const isTabletPC = useMediaQuery({ query: "(min-width: 768px) " });
     useEffect(() => {
         if (!isTabletPC) {
@@ -57,9 +58,7 @@ const CustomControls = (collapsed, setCollapsed) => ({ getCurrentSlideIndex, scr
                 display: 'none',
             });
         } else {
-            setCurrentStyle({
-                position: 'fixed', bottom: '8%', left: 0, width: 200, zIndex: 100,
-            });
+            setCurrentStyle(basicStyle);
             setCollapsed(false);
         }
     }, [isTabletPC]);
@@ -71,68 +70,40 @@ const CustomControls = (collapsed, setCollapsed) => ({ getCurrentSlideIndex, scr
                 style={collapsed ? collapsedStyle : currentStyle}
             >
                 <Menu.Item key="1" icon={
-                    <Tooltip
-                        placement="right"
-                        title={isTabletPC ? null : "Home"}>
-                        <HomeOutlined />
-                    </Tooltip>}>
+                    <HomeOutlined />}>
                     Home
                 </Menu.Item>
 
 
                 <Menu.Item key="2" icon={
-                    <Tooltip
-                        placement="right"
-                        title={isTabletPC ? null : "About"}>
-                        <UserOutlined />
-                    </Tooltip>}>
+                    <UserOutlined />}>
                     About
                 </Menu.Item>
 
                 <Menu.Item key="3" icon={
-                    <Tooltip
-                        placement="right"
-                        title={isTabletPC ? null : "Tech Skills"}>
-                        <AppstoreAddOutlined />
-                    </Tooltip>}>
+                    <AppstoreAddOutlined />}>
                     Tech Skills
                 </Menu.Item>
 
                 <Menu.Item key="4" icon={
-                    <Tooltip
-                        placement="right"
-                        title={isTabletPC ? null : "Project"}>
-                        <BulbOutlined />
-                    </Tooltip>
+                    <BulbOutlined />
                 }>
                     Project
                 </Menu.Item>
 
                 <Menu.Item key="5" icon={
-                    <Tooltip
-                        placement="right"
-                        title={isTabletPC ? null : "Experience"}>
-                        <FormOutlined />
-                    </Tooltip>
+                    <FormOutlined />
                 }>
                     Experience
                 </Menu.Item>
 
                 <Menu.Item key="6" icon={
-                    <Tooltip
-                        placement="right"
-                        title={isTabletPC ? null : "Education"}>
-                        <BankOutlined />
-                    </Tooltip>}>
+                    <BankOutlined />}>
                     Education
                 </Menu.Item>
 
                 <Menu.Item key="7" icon={
-                    <Tooltip
-                        placement="right"
-                        title={isTabletPC ? null : "Contact"}>
-                        <MailOutlined />
-                    </Tooltip>
+                    <MailOutlined />
                 }>
                     Contact
                 </Menu.Item>
