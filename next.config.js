@@ -6,8 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 
 module.exports = withBundleAnalyzer({
-    distDir: '.next',
-
+    compress: true,
     webpack(config, { webpack }) {
         const prod = process.env.NODE_ENV === 'production';
         const newConfig = {
@@ -16,9 +15,6 @@ module.exports = withBundleAnalyzer({
         };
         if (prod) {
             newConfig.devtool = 'hidden-source-map';
-            newConfig.resolve.alias = {
-                "@ant-design/icons$": resolve(__dirname, "path/to/your/src/icons.tsx")
-            };
         }
         return newConfig;
     },
