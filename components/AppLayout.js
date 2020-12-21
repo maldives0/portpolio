@@ -35,7 +35,7 @@ import Image from 'next/image';
 import { FullPage } from 'react-full-page';
 import { useMediaQuery } from "react-responsive";
 
-const { Sider, Footer, Content } = Layout;
+const { Header, Sider, Footer, Content } = Layout;
 const { Text } = Typography;
 const collapsedStyle = {
     position: 'fixed', top: 60, width: '38px', zIndex: 100, left: '14px', border: 'none'
@@ -68,7 +68,6 @@ const CustomControls = (collapsed, setCollapsed) => ({ getCurrentSlideIndex, scr
             <Menu theme="light" mode="inline"
                 selectedKeys={[`${currentSlideIndex + 1}`]}
                 onClick={onClickMenu}
-
                 style={collapsed ? collapsedStyle : currentStyle}
             >
                 <Menu.Item key="1" icon={
@@ -150,58 +149,78 @@ const AppLayout = ({ children }) => {
     }, []);
 
     return (
-        <Layout>
-            <GlobalLayout />
-            {isTabletPC ? (<Sider
-                collapsible
-                collapsed={collapsed}
-                trigger={null}
-                className="site-sider-layout">
-                <Logo>
-                    <Row gutter={3} style={{ display: 'block' }}>
-                        <Image
-                            src="/img/profile-me.jpg"
-                            alt="profile"
-                            width={150}
-                            height={150}
-                        />
-                    </Row>
-                    <Row gutter={3}>
-                        <Space
-                            style={{ fontSize: 13 }}
-                            direction="vertical">
-                            <>
-                                <Text type="secondary">Juyoung Jung</Text>
-                                <Text strong>Front-End Developer</Text>
-                            </>
-                        </Space>
-                    </Row>
-                </Logo>
-            </Sider >) : (<Tooltip
-                placement="right"
-                title={collapsed ? "메뉴 감추기" : "메뉴 보기"}
-                className="menufold-layout">
-                {React.createElement(collapsed ? MinusCircleTwoTone : PlusCircleTwoTone, {
-                    className: 'trigger',
-                    onClick: toggleCollapsed,
-                })}
-            </Tooltip>)}
-            <Layout style={{ overflow: 'unset' }}>
-                <Content>
-                    <div>
-                        <FullPage
-                            controls={CustomControls(collapsed, setCollapsed)}
-                        >
-                            {children}
-                        </FullPage>
-                    </div>
-                </Content>
-                <Footer>
-                    <p>Juyoung's Portpolio ©2020 Created by Juyoung Jung</p></Footer>
-            </Layout>
-        </Layout>
-
-
+        <>
+            {isTabletPC ? (
+                <Layout>
+                    <GlobalLayout />
+                    <Sider
+                        collapsible
+                        collapsed={collapsed}
+                        trigger={null}
+                        className="site-sider-layout">
+                        <Logo>
+                            <Row gutter={3} style={{ display: 'block' }}>
+                                <Image
+                                    src="/img/profile-me.jpg"
+                                    alt="profile"
+                                    width={150}
+                                    height={150}
+                                />
+                            </Row>
+                            <Row gutter={3}>
+                                <Space
+                                    style={{ fontSize: 13 }}
+                                    direction="vertical">
+                                    <>
+                                        <Text type="secondary">Juyoung Jung</Text>
+                                        <Text strong>Front-End Developer</Text>
+                                    </>
+                                </Space>
+                            </Row>
+                        </Logo>
+                    </Sider >
+                    <Layout style={{ overflow: 'unset' }}>
+                        <Content>
+                            <div>
+                                <FullPage
+                                    controls={CustomControls(collapsed, setCollapsed)}
+                                >
+                                    {children}
+                                </FullPage>
+                            </div>
+                        </Content>
+                        <Footer>
+                            <p>Juyoung's Portpolio ©2020 Created by Juyoung Jung</p></Footer>
+                    </Layout>
+                </Layout>
+            ) : (
+                    <Layout className="layout">
+                        <GlobalLayout />
+                        <Header className="layout-background">
+                            <Tooltip
+                                placement="right"
+                                title={collapsed ? "메뉴 감추기" : "메뉴 보기"}
+                                className="menufold-layout">
+                                {React.createElement(collapsed ? MinusCircleTwoTone : PlusCircleTwoTone, {
+                                    className: 'trigger',
+                                    onClick: toggleCollapsed,
+                                })}
+                            </Tooltip>
+                        </Header>
+                        <Content>
+                            <div>
+                                <FullPage
+                                    controls={CustomControls(collapsed, setCollapsed)}
+                                >
+                                    {children}
+                                </FullPage>
+                            </div>
+                        </Content>
+                        <Footer>
+                            <p>Juyoung's Portpolio ©2020 Created by Juyoung Jung</p></Footer>
+                    </Layout>
+                )}
+        </>
     );
 };
 AppLayout.propTypes = {

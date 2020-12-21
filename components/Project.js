@@ -31,7 +31,7 @@ const Project = () => {
                 data-aos-delay="200"
             >
                 <ProjectLayout />
-                <Row gutter={[8, 8]} justify="space-around" >
+                <Row justify={isTabletPC ? "space-around" : "center"}>
                     <List
                         grid={{
                             xs: 2,
@@ -39,26 +39,27 @@ const Project = () => {
                             md: 2,
                             lg: 4,
                             xl: 4,
+                            gutter: [8, 8],
                         }}
                         dataSource={projectData}
                         itemLayout="horizontal"
                         renderItem={(item) => (
-                            <Col offset={3}>
-                                <List.Item>
+                            <List.Item>
+                                <Col>
                                     <Card
                                         hoverable
                                         onClick={toggleModal(item.key)}
                                         cover={<Image
                                             src={item.img}
                                             alt={item.key}
-                                            width={80} height={120}
+                                            width={70} height={120}
                                         />} >
                                         <Card.Meta title={item.title}
                                             description={item.desc}
                                         />
                                     </Card>
-                                </List.Item>
-                            </Col>
+                                </Col>
+                            </List.Item>
                         )}
                     />
                 </Row>
@@ -102,7 +103,7 @@ const Project = () => {
                             layout={isTabletPC ? "default" : "vertical"}
                             bordered={true}
                             size={isTabletPC ? "default" : "small"}
-                            column={{ xs: 8, sm: 2, md: 1 }}
+                            column={{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }}
                         >
                             <Descriptions.Item label="Term" span={2}>{seletedData.term}</Descriptions.Item>
                             <Descriptions.Item label="Using Skills">{seletedData.skills}</Descriptions.Item>

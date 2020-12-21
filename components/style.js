@@ -6,6 +6,8 @@ import styled from '@emotion/styled';
 export const GlobalLayout = () => (
   <Global
     styles={css`
+    html {
+      overflow-x: hidden;}
     .ant-menu-item,
     ant-menu-item ant-menu-item-selected {
     padding:0 15px !important;
@@ -18,9 +20,7 @@ export const GlobalLayout = () => (
     left:0;
     z-index:99;
   }
-   .basic-layout-background{
-    background:#f0f2f5;
-   }
+   
   .menufold-layout{
     font-size: 2em;
     position:fixed;
@@ -42,7 +42,38 @@ export const GlobalLayout = () => (
        text-align:right;
      }
    }
-      
+   .layout-background{
+         height:0;
+   }
+   .basic-layout-background-pc{
+    background:#f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    position:relative;
+    top:0;
+    left:0;
+    height:100%; 
+    padding: 2% 0 3% 220px; 
+  }
+  .basic-layout-background-mobile{
+    background:#f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    position:relative;
+    top:0;
+    left:0;
+    padding: 5% 2% 35% 2%; 
+  }
+  
+  .home-layout-background{
+    background:no-repeat url(/img/wall-e-meets-mac.jpg) center/100% 100%;
+    width:100%;
+    height:100vh; 
+  }
              `
     } />
 );
@@ -61,23 +92,7 @@ text-transform:uppercase;
 
 `;
 
-export const SlideStyle = styled.div`
-display: flex;
-justify-content: center;
-align-items:center;
-flex-direction: column;
-position:relative;
-top:0;
-left:0;
 
-height:100%; 
-.home-layout-background{
-  background:no-repeat url(/img/wall-e-meets-mac.jpg) center/100% 100%;
-  width:100%;
-  height:100%; 
-}
-
-`;
 
 export const ContactFlex = styled.div`
 display: flex;

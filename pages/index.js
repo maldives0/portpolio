@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import AppLayout from '../components/AppLayout';
 import Home from '../components/Home';
 import About from '../components/About';
@@ -8,66 +8,52 @@ import Project from '../components/Project';
 import Education from '../components/Education';
 import Contact from '../components/Contact';
 import { Slide } from 'react-full-page';
-import { SlideStyle, GlobalLayout } from '../components/style';
-import MediaQuery from "react-responsive";
+import { GlobalLayout } from '../components/style';
+
 import { useMediaQuery } from "react-responsive";
 const Index = () => {
-    const [currentStyle, setCurrentStyle] = useState({ padding: '2% 0 3% 220px' });
     const isTabletPC = useMediaQuery({ query: "(min-width: 768px) " });
-    useEffect(() => {
-        if (!isTabletPC) {
-            setCurrentStyle({ padding: '2%' });
-        } else {
-            setCurrentStyle({ padding: '2% 0 3% 220px' });
-        }
-    }, [isTabletPC]);
     return (
         <AppLayout>
             <GlobalLayout />
             <Slide>
-                <SlideStyle
-                    style={currentStyle}
-                    className="basic-layout-background">
+                <div
+                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
                     <Home />
-                </SlideStyle>
+                </div>
             </Slide>
             <Slide>
                 <About />
             </Slide>
             <Slide>
-                <SlideStyle
-                    style={currentStyle}
-                    className="basic-layout-background">
+                <div
+                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
                     <Skill />
-                </SlideStyle>
+                </div>
             </Slide>
             <Slide>
-                <SlideStyle
-                    style={currentStyle}
-                    className="basic-layout-background">
+                <div
+                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
                     <Project />
-                </SlideStyle>
+                </div>
             </Slide>
             <Slide>
-                <SlideStyle
-                    style={currentStyle}
-                    className="basic-layout-background">
+                <div
+                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
                     <Experience />
-                </SlideStyle>
+                </div>
             </Slide>
             <Slide>
-                <SlideStyle
-                    style={currentStyle}
-                    className="basic-layout-background">
+                <div
+                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
                     <Education />
-                </SlideStyle>
+                </div>
             </Slide>
             <Slide>
-                <SlideStyle
-                    style={currentStyle}
-                    className="basic-layout-background">
+                <div
+                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
                     <Contact />
-                </SlideStyle>
+                </div>
             </Slide>
         </AppLayout>
     );
