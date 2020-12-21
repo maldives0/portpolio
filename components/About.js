@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { AboutLayout } from './style';
 import { Typography } from 'antd';
 

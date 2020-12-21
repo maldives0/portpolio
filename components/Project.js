@@ -2,7 +2,13 @@ import React, { useState, useCallback, useEffect } from 'react';
 import {
     Typography, Card, Row, List, Descriptions, Button, Modal
 } from 'antd';
-import { GithubOutlined, SelectOutlined } from '@ant-design/icons';
+import {
+    default as GithubOutlined,
+} from '@ant-design/icons/GithubOutlined';
+import {
+    default as SelectOutlined,
+} from '@ant-design/icons/SelectOutlined';
+
 import Image from 'next/image';
 import { ProjectLayout } from './style';
 const { Title, Link } = Typography;
@@ -68,12 +74,16 @@ const Project = () => {
                         onCancel={handleCancel}
                         footer={[
                             <Button key="live">
-                                <Link href={seletedData.live} target="_blank">
+                                <Link
+                                    prefetch={false}
+                                    href={seletedData.live} target="_blank">
                                     <SelectOutlined style={{ marginRight: 2 }} />
                                     바로가기</Link>
                             </Button>,
                             <Button key="github" type="primary">
-                                <Link href={seletedData.git} target="_blank">
+                                <Link
+                                    prefetch={false}
+                                    href={seletedData.git} target="_blank">
                                     <GithubOutlined style={{ marginRight: 2 }} />
                                     코드보기</Link>
                             </Button>

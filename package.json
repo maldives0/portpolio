@@ -19,7 +19,13 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-full-page": "^0.1.11",
-    "swr": "^0.3.9"
+    "swr": "^0.3.9",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "nodemailer": "^6.4.17",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
