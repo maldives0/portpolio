@@ -10,7 +10,7 @@ import {
 } from '@ant-design/icons/SelectOutlined';
 import Image from 'next/image';
 import { ProjectLayout } from './style';
-const { Link } = Typography;
+const { Link, Title } = Typography;
 import projectData from '../assets/projectData';
 import { useMediaQuery } from "react-responsive";
 const Project = () => {
@@ -54,9 +54,11 @@ const Project = () => {
                                             alt={item.key}
                                             width={70} height={120}
                                         />} >
-                                        <Card.Meta title={item.title}
+                                        {isTabletPC ? (<Card.Meta title={item.title}
                                             description={item.desc}
-                                        />
+                                        />) : (<Title
+                                            level={4}>{item.title}</Title>)}
+
                                     </Card>
                                 </Col>
                             </List.Item>

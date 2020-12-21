@@ -151,13 +151,13 @@ const AppLayout = ({ children }) => {
     return (
         <>
             {isTabletPC ? (
-                <Layout>
+                <Layout className="layout">
                     <GlobalLayout />
                     <Sider
                         collapsible
                         collapsed={collapsed}
                         trigger={null}
-                        className="site-sider-layout">
+                        className="sider-layout">
                         <Logo>
                             <Row gutter={3} style={{ display: 'block' }}>
                                 <Image

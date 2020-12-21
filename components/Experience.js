@@ -22,12 +22,12 @@ const Experience = () => {
     return (
         <>
             <ExperienceLayout />
-            <Row xs={16} sm={12} md={8}>
+            <Row xs={16} sm={12} md={8} style={{ textAlign: 'center' }}>
                 <Title
                     data-aos="fade-up"
                     data-aos-duration="2000"
                     level={3}
-                >회사에 필요하다면 저는 이런 일도 할 수 있습니다
+                >회사에 필요하다면<br /> 저는 이런 일도 할 수 있습니다
                 </Title>
             </Row>
             <div data-aos="fade-down"

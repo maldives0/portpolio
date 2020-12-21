@@ -6,14 +6,12 @@ import styled from '@emotion/styled';
 export const GlobalLayout = () => (
   <Global
     styles={css`
-    html {
-      overflow-x: hidden;}
+   
     .ant-menu-item,
     ant-menu-item ant-menu-item-selected {
     padding:0 15px !important;
     }
-    .site-sider-layout,
-     ant-layout-sider ant-layout-sider-dark site-sider-layout {
+    .sider-layout{
     background: #fff;
        height:100vh;
     position:fixed;
@@ -44,6 +42,7 @@ export const GlobalLayout = () => (
    }
    .layout-background{
          height:0;
+         width:100%;
    }
    .basic-layout-background-pc{
     background:#f0f2f5;
@@ -66,7 +65,8 @@ export const GlobalLayout = () => (
     position:relative;
     top:0;
     left:0;
-    padding: 5% 2% 35% 2%; 
+    height:100%; 
+    padding: 2%; 
   }
   
   .home-layout-background{

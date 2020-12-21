@@ -25,7 +25,7 @@ const projectData = [
     },
     {
         key: 'sns',
-        title: "밀롱가에서의 경험을 공유하는 탱고인들을 위한 SNS, ymillonga sns version",
+        title: "ymillonga sns version",
         desc: 'React, Next, Redux, Redux Saga, Express를 이용해 Fullstack으로 만든, 트위터의 기능을 가진 SNS 서비스입니다',
         term: '20.10 - 20.12',
         skills: ['javascript, react, nodejs, nextjs, expressjs, mysql, webpack'],
