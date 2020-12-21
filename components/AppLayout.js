@@ -1,16 +1,31 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Layout, Menu, Typography, Space, Row, Col } from 'antd';
+import { Layout, Menu, Typography, Space, Row } from 'antd';
+
 import {
-    BulbOutlined,
-    UserOutlined,
-    AppstoreAddOutlined,
-    BankOutlined,
-    FormOutlined,
-    MailOutlined,
-    HomeOutlined,
-    SettingOutlined,
-} from '@ant-design/icons';
+    default as BulbOutlined,
+} from '@ant-design/icons/BulbOutlined';
+import {
+    default as UserOutlined,
+} from '@ant-design/icons/UserOutlined';
+import {
+    default as AppstoreAddOutlined,
+} from '@ant-design/icons/AppstoreAddOutlined';
+import {
+    default as BankOutlined,
+} from '@ant-design/icons/BankOutlined';
+import {
+    default as FormOutlined,
+} from '@ant-design/icons/FormOutlined';
+import {
+    default as MailOutlined,
+} from '@ant-design/icons/MailOutlined';
+import {
+    default as HomeOutlined,
+} from '@ant-design/icons/HomeOutlined';
+import {
+    default as SettingOutlined,
+} from '@ant-design/icons/SettingOutlined';
 import { GlobalLayout, Logo, } from './style';
 import Image from 'next/image';
 import { FullPage } from 'react-full-page';

@@ -1,15 +1,24 @@
 import React, { useState, useCallback } from 'react';
 import { Typography, List, Card, Form, Input, Drawer, Button, message } from 'antd';
 import {
-    EnvironmentOutlined,
-    PhoneOutlined,
-    GithubOutlined,
-    CoffeeOutlined,
-    MailOutlined
-} from '@ant-design/icons';
+    default as EnvironmentOutlined,
+} from '@ant-design/icons/EnvironmentOutlined';
+import {
+    default as PhoneOutlined,
+} from '@ant-design/icons/PhoneOutlined';
+import {
+    default as GithubOutlined,
+} from '@ant-design/icons/GithubOutlined';
+import {
+    default as CoffeeOutlined,
+} from '@ant-design/icons/CoffeeOutlined';
+import {
+    default as MailOutlined,
+} from '@ant-design/icons/MailOutlined';
+
 import { FormStyle, ContactLayout, ContactFlex } from './style';
 import useInput from '../hooks/useInput';
-import { backUrl } from '../config/url';
+import backUrl from '../config/url';
 import axios from 'axios';
 const { Paragraph, Link
 } = Typography;
@@ -18,19 +27,19 @@ const { Paragraph, Link
 const contactData = [
     {
         title: <EnvironmentOutlined />,
-        content: <Paragraph copyable={{ tooltips: false }}>서울특별시 강동구</Paragraph>
+        content: <Paragraph>서울특별시 강동구 상암로</Paragraph>
     },
     {
         title: <PhoneOutlined />,
-        content: <Paragraph copyable={{ tooltips: false }}>+82 010-5500-2288</Paragraph>
+        content: <Paragraph copyable={{ tooltips: false, text: '+82 010-5500-2288' }}>+82 010-5500-2288</Paragraph>
     },
     {
         title: <MailOutlined />,
-        content: <Paragraph copyable={{ tooltips: false }}>maliethy@gmail.com</Paragraph>
+        content: <Paragraph copyable={{ tooltips: false, text: 'maliethy@gmail.com' }}>maliethy@gmail.com</Paragraph>
     },
     {
         title: <GithubOutlined />,
-        content: <Paragraph copyable={{ tooltips: false }}>
+        content: <Paragraph copyable={{ tooltips: false, text: 'https://github.com/maldives0' }}>
             <Link href="https://github.com/maldives0" target="_blank">
                 https://github.com/maldives0
     </Link>
@@ -38,7 +47,7 @@ const contactData = [
     },
     {
         title: <CoffeeOutlined />,
-        content: <Paragraph copyable={{ tooltips: false }}>
+        content: <Paragraph copyable={{ tooltips: false, text: 'https://maldives0.github.io/' }}>
             <Link href="https://maldives0.github.io/" target="_blank">
                 https://maldives0.github.io/
 </Link>
@@ -50,9 +59,7 @@ const validateMessages = {
     required: '${name}을 적어주세요!',
     types: {
         email: '${name} 이메일 형식에 맞지 않습니다!',
-
     },
-
 };
 const Contact = () => {
 
@@ -144,7 +151,6 @@ const Contact = () => {
                                     { required: true, },
                                 ]}>
                                 <Input
-
                                     onChange={onChangeName}
                                     value={nameValue}
                                     required

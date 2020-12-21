@@ -2,7 +2,10 @@ import React, { useCallback } from 'react';
 import { Form, Input, Button, Row, } from 'antd';
 import { useRouter } from 'next/router';
 import useInput from '../hooks/useInput';
-import { LockOutlined } from '@ant-design/icons';
+
+import {
+    default as LockOutlined,
+} from '@ant-design/icons/LockOutlined';
 const dotenv = require('dotenv');
 dotenv.config();
 

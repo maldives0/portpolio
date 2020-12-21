@@ -2,11 +2,11 @@ import React, { useCallback, useState } from 'react';
 import useSWR, { mutate, trigger } from 'swr';
 import { Table, Divider, Button } from 'antd';
 import Proptypes from 'prop-types';
-import { backUrl } from '../config/url';
+import backUrl from '../config/url';
 import axios from 'axios';
 const fetcher = (url) => axios.get(url, { withCredentials: true }).then((result) => result.data);
 const MessageList = ({ setShowList }) => {
-    const { data, error } = useSWR(`${backUrl}/messages`, fetcher, { revalidateOnFocus: true });
+    const { data, error } = useSWR(`${backUrl}/api/messages`, fetcher, { revalidateOnFocus: true });
     if (error) {
         console.error(error);
         return (<div>데이터 로딩 중 에러가 발생했습니다</div>);
@@ -44,9 +44,9 @@ const MessageList = ({ setShowList }) => {
 
     const onDelete = useCallback(async () => {
         try {
-            const url = `${backUrl}/messages`;
+            const url = `${backUrl}/api/messages`;
             mutate(url, data?.filter(c => c.id !== selectedRowKeys), false);
-            await axios.delete(`${backUrl}/messages/${selectedRowKeys}`, { withCredentials: true });
+            await axios.delete(`${backUrl}/api/messages/${selectedRowKeys}`, { withCredentials: true });
             trigger(url);
         }
         catch (err) {

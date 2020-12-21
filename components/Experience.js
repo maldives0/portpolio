@@ -3,11 +3,16 @@ import {
     Typography, Card, Tooltip
     , Row, Col
 } from 'antd';
+
 import {
-    TeamOutlined,
-    CalendarOutlined,
-    CopyOutlined
-} from '@ant-design/icons';
+    default as TeamOutlined,
+} from '@ant-design/icons/TeamOutlined';
+import {
+    default as CalendarOutlined,
+} from '@ant-design/icons/CalendarOutlined';
+import {
+    default as CopyOutlined,
+} from '@ant-design/icons/CopyOutlined';
 import { ExperienceLayout } from './style';
 const { Title } = Typography;
 
