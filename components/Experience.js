@@ -33,7 +33,7 @@ const Experience = () => {
             <div data-aos="fade-down"
                 data-aos-delay="200"
             >
-                <Row justify="space-between" >
+                <Row justify="space-between" gutter={[16, 8]} >
                     <Col xs={16} sm={12} md={8}>
                         <Tooltip
                             trigger="hover"

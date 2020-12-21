@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Popover, Row, Col, List } from 'antd';
+import { Divider, Popover, Row, Col } from 'antd';
 import Image from 'next/image';
 
 
@@ -43,7 +43,7 @@ const Skill = () => {
                 justify="space-around"
                 data-aos="slide-up"
                 gutter={2}>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/html5.png"
                         alt="html5"
@@ -51,7 +51,7 @@ const Skill = () => {
                         height={100}
                     />
                 </Col>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/css3.png"
                         alt="css3"
@@ -59,7 +59,7 @@ const Skill = () => {
                         height={100}
                     />
                 </Col>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/jquery.png"
                         alt="jquery"
@@ -67,7 +67,7 @@ const Skill = () => {
                         height={100}
                     />
                 </Col>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/sass.png"
                         alt="sass"
@@ -84,7 +84,7 @@ const Skill = () => {
                 justify="space-around"
                 data-aos="slide-up"
                 gutter={[24, 8]}>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/js.png"
                         alt="vanillajs"
@@ -92,7 +92,7 @@ const Skill = () => {
                         height={100}
                     />
                 </Col>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/es6.png"
                         alt="es6"
@@ -101,7 +101,7 @@ const Skill = () => {
                     />
                 </Col>
 
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/react.png"
                         alt="react"
@@ -110,7 +110,7 @@ const Skill = () => {
                     />
                 </Col>
 
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/redux.png"
                         alt="redux"
@@ -118,7 +118,7 @@ const Skill = () => {
                         height={100}
                     />
                 </Col>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/nodejs.png"
                         alt="nodejs"
@@ -126,7 +126,7 @@ const Skill = () => {
                         height={100}
                     />
                 </Col>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/git.png"
                         alt="git"
@@ -141,7 +141,7 @@ const Skill = () => {
                 justify="space-around"
                 data-aos="slide-up"
                 gutter={[24, 8]}>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/expressjs.png"
                         alt="expressjs"
@@ -149,7 +149,7 @@ const Skill = () => {
                         height={100}
                     />
                 </Col>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/mysql.png"
                         alt="mysql"
@@ -157,7 +157,7 @@ const Skill = () => {
                         height={100}
                     />
                 </Col>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/react-native.png"
                         alt="react-native"
@@ -165,7 +165,7 @@ const Skill = () => {
                         height={100}
                     />
                 </Col>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/webpack.png"
                         alt="webpack"
@@ -173,7 +173,7 @@ const Skill = () => {
                         height={100}
                     />
                 </Col>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/nginx.png"
                         alt="nginx"
@@ -181,7 +181,7 @@ const Skill = () => {
                         height={100}
                     />
                 </Col>
-                <Col xs={8} sm={4} md={4}>
+                <Col xs={5} sm={4} md={4}>
                     <Image
                         src="/img/logo/php.png"
                         alt="php"

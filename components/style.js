@@ -13,10 +13,7 @@ export const GlobalLayout = () => (
     .site-sider-layout,
      ant-layout-sider ant-layout-sider-dark site-sider-layout {
     background: #fff;
-    width: 150px !important;
-    max-width:150px !important;
-    min-width:150px !important;
-    height:100vh;
+       height:100vh;
     position:fixed;
     left:0;
     z-index:99;
@@ -24,9 +21,26 @@ export const GlobalLayout = () => (
    .basic-layout-background{
     background:#f0f2f5;
    }
-
+  .menufold-layout{
+    font-size: 2em;
+    position:fixed;
+    left:20px;
+    top:20px;
+    z-index:1000;
+  }
     .ant-row{
     margin-right:0 !important;
+   }
+   .ant-layout-footer{
+     padding: 5px 0;
+     width:100%;
+     position: fixed;
+     bottom:0;
+     right:0;
+     & >p{
+       margin:0 25px 0 0 !important;
+       text-align:right;
+     }
    }
       
              `
@@ -55,7 +69,7 @@ flex-direction: column;
 position:relative;
 top:0;
 left:0;
-padding: 2% 0 3% 170px;
+
 height:100%; 
 .home-layout-background{
   background:no-repeat url(/img/wall-e-meets-mac.jpg) center/100% 100%;
@@ -64,6 +78,7 @@ height:100%;
 }
 
 `;
+
 export const ContactFlex = styled.div`
 display: flex;
 justify-content: center;
@@ -141,24 +156,33 @@ export const AboutLayout = () => (
     styles={css`
   .ant-typography-about,
   h1.ant-typography.ant-typography-about,
+  h2.ant-typography.ant-typography-about,
+  h3.ant-typography.ant-typography-about,
   h4.ant-typography.ant-typography-about {
   line-height: 1.2em;
   text-align: center;
   color:#fff;    
 }     
-.about-layout-background{
-  background:no-repeat url(/img/human-science.jpg) center/100% 100%;
+.about-layout-background-pc{
+  background:no-repeat url(/img/human-science.jpg) center/95% 95%;
   width:100%;
   height:100%;  
   display: flex;
   justify-content: center;
   align-items:center;
   flex-direction: column;
-  padding: 3% 0 15% 20%;
-
-}
-
-
+  padding: 2% 2% 3% 260px;
+  }
+.about-layout-background-mobile{
+  background:no-repeat url(/img/human-science.jpg) center/95% 95%;
+  width:100%;
+  height:100%;  
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+  padding: 2%;
+  }
 `
     } />
 );
@@ -192,6 +216,7 @@ export const ProjectLayout = () => (
 .modal-image-style{
   margin:10px;
   width:100%;
+  text-align: center;
 }
 .ant-modal{
   top:30px;

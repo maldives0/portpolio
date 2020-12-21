@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Layout, Menu, Typography, Space, Row } from 'antd';
+import { Layout, Menu, Typography, Space, Row, Tooltip } from 'antd';
 
 import {
     default as BulbOutlined,
@@ -23,62 +23,140 @@ import {
 import {
     default as HomeOutlined,
 } from '@ant-design/icons/HomeOutlined';
+import {
+    default as MinusCircleTwoTone,
+} from '@ant-design/icons/MinusCircleTwoTone';
+import {
+    default as PlusCircleTwoTone,
+} from '@ant-design/icons/PlusCircleTwoTone';
 
 import { GlobalLayout, Logo, } from './style';
 import Image from 'next/image';
 import { FullPage } from 'react-full-page';
-import Link from 'next/link';
+import { useMediaQuery } from "react-responsive";
+
 const { Sider, Footer, Content } = Layout;
 const { Text } = Typography;
+const collapsedStyle = {
+    position: 'fixed', top: 60, width: '38px', zIndex: 100, left: '14px', border: 'none'
+};
 
-const CustomControls = ({ getCurrentSlideIndex, scrollToSlide }) => {
+const CustomControls = (collapsed, setCollapsed) => ({ getCurrentSlideIndex, scrollToSlide }) => {
+
     const currentSlideIndex = getCurrentSlideIndex();
     const onClickMenu = useCallback((e) => {
         scrollToSlide(e.key - 1);
     }, []);
-
+    const [currentStyle, setCurrentStyle] = useState({
+        position: 'fixed', bottom: '8%', left: 0, width: 200, zIndex: 100,
+    });
+    const isTabletPC = useMediaQuery({ query: "(min-width: 768px) " });
+    useEffect(() => {
+        if (!isTabletPC) {
+            setCurrentStyle({
+                display: 'none',
+            });
+        } else {
+            setCurrentStyle({
+                position: 'fixed', bottom: '8%', left: 0, width: 200, zIndex: 100,
+            });
+            setCollapsed(false);
+        }
+    }, [isTabletPC]);
     return (
+        <>
+            <Menu theme="light" mode="inline"
+                selectedKeys={[`${currentSlideIndex + 1}`]}
+                onClick={onClickMenu}
 
-        <Menu theme="light" mode="inline"
-            selectedKeys={[`${currentSlideIndex + 1}`]}
-            onClick={onClickMenu}
-            style={{
-                position: 'fixed', bottom: '8%', left: 0, width: 150, zIndex: 100,
-            }}
-        >
-            <Menu.Item key="1" icon={<HomeOutlined />}>
-                <Link href="/"><a>Home</a></Link>
-            </Menu.Item>
-            <Menu.Item key="2" icon={<UserOutlined />}>
-                <Link href="/"><a>About</a></Link>
-            </Menu.Item>
-            <Menu.Item key="3" icon={<AppstoreAddOutlined />}>
-                <Link href="/"><a>Tech Skills</a></Link>
-            </Menu.Item>
-            <Menu.Item key="4" icon={<BulbOutlined />}>
-                <Link href="/"><a>Project</a></Link>
-            </Menu.Item>
-            <Menu.Item key="5" icon={<FormOutlined />}>
-                <Link href="/"><a>Experience</a></Link>
-            </Menu.Item>
-            <Menu.Item key="6" icon={<BankOutlined />}>
-                <Link href="/"><a>Education</a></Link>
-            </Menu.Item>
-            <Menu.Item key="7" icon={<MailOutlined />}>
-                <Link href="/"><a>Contact</a></Link>
-            </Menu.Item>
-        </Menu>
+                style={collapsed ? collapsedStyle : currentStyle}
+            >
+                <Menu.Item key="1" icon={
+                    <Tooltip
+                        placement="right"
+                        title={isTabletPC ? null : "Home"}>
+                        <HomeOutlined />
+                    </Tooltip>}>
+                    Home
+                </Menu.Item>
 
+
+                <Menu.Item key="2" icon={
+                    <Tooltip
+                        placement="right"
+                        title={isTabletPC ? null : "About"}>
+                        <UserOutlined />
+                    </Tooltip>}>
+                    About
+                </Menu.Item>
+
+                <Menu.Item key="3" icon={
+                    <Tooltip
+                        placement="right"
+                        title={isTabletPC ? null : "Tech Skills"}>
+                        <AppstoreAddOutlined />
+                    </Tooltip>}>
+                    Tech Skills
+                </Menu.Item>
+
+                <Menu.Item key="4" icon={
+                    <Tooltip
+                        placement="right"
+                        title={isTabletPC ? null : "Project"}>
+                        <BulbOutlined />
+                    </Tooltip>
+                }>
+                    Project
+                </Menu.Item>
+
+                <Menu.Item key="5" icon={
+                    <Tooltip
+                        placement="right"
+                        title={isTabletPC ? null : "Experience"}>
+                        <FormOutlined />
+                    </Tooltip>
+                }>
+                    Experience
+                </Menu.Item>
+
+                <Menu.Item key="6" icon={
+                    <Tooltip
+                        placement="right"
+                        title={isTabletPC ? null : "Education"}>
+                        <BankOutlined />
+                    </Tooltip>}>
+                    Education
+                </Menu.Item>
+
+                <Menu.Item key="7" icon={
+                    <Tooltip
+                        placement="right"
+                        title={isTabletPC ? null : "Contact"}>
+                        <MailOutlined />
+                    </Tooltip>
+                }>
+                    Contact
+                </Menu.Item>
+
+            </Menu>
+        </>
     );
 };
 const AppLayout = ({ children }) => {
+    const isTabletPC = useMediaQuery({ query: "(min-width: 768px)" });
+    const [collapsed, setCollapsed] = useState(false);
+    const toggleCollapsed = useCallback(() => {
+        setCollapsed((prev) => !prev);
+    }, []);
 
     return (
         <Layout>
             <GlobalLayout />
-            <Sider
+            {isTabletPC ? (<Sider
+                collapsible
+                collapsed={collapsed}
+                trigger={null}
                 className="site-sider-layout">
-
                 <Logo>
                     <Row gutter={3} style={{ display: 'block' }}>
                         <Image
@@ -99,21 +177,27 @@ const AppLayout = ({ children }) => {
                         </Space>
                     </Row>
                 </Logo>
-            </Sider >
+            </Sider >) : (<Tooltip
+                placement="right"
+                title={collapsed ? "메뉴 감추기" : "메뉴 보기"}
+                className="menufold-layout">
+                {React.createElement(collapsed ? MinusCircleTwoTone : PlusCircleTwoTone, {
+                    className: 'trigger',
+                    onClick: toggleCollapsed,
+                })}
+            </Tooltip>)}
             <Layout style={{ overflow: 'unset' }}>
                 <Content>
                     <div>
                         <FullPage
-                            controls={CustomControls}
+                            controls={CustomControls(collapsed, setCollapsed)}
                         >
                             {children}
                         </FullPage>
                     </div>
                 </Content>
-                <Footer style={{
-                    padding: 10,
-                    textAlign: 'right', position: 'fixed', bottom: 0, right: '5%'
-                }}>Juyoung's Portpolio ©2020 Created by Juyoung Jung</Footer>
+                <Footer>
+                    <p>Juyoung's Portpolio ©2020 Created by Juyoung Jung</p></Footer>
             </Layout>
         </Layout>
 

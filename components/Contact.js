@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, List, Card } from 'antd';
+import { Typography, List, Card, Row } from 'antd';
 import {
     default as EnvironmentOutlined,
 } from '@ant-design/icons/EnvironmentOutlined';
@@ -18,8 +18,7 @@ import {
 
 import { ContactLayout, ContactFlex } from './style';
 
-const { Paragraph, Link
-} = Typography;
+const { Paragraph, Link, Title } = Typography;
 
 
 const contactData = [
@@ -60,6 +59,12 @@ const Contact = () => {
         <ContactFlex data-aos-anchor="#trigger-contact"
         >
             <ContactLayout />
+            <Row xs={16} sm={12} md={8} style={{ marginBottom: 50, textAlign: 'center' }}>
+                <Title
+                    data-aos="fade-up"
+                    data-aos-duration="2000"  >Let's make something great together!
+                </Title>
+            </Row>
             <div className="contact-list-style" data-aos="fade-up" >
                 <List
                     grid={{

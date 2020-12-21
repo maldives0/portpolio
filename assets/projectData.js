@@ -38,12 +38,12 @@ const projectData = [
     {
         key: 'portpolio',
         title: "juyoung's portpolio",
-        desc: '현재 보고 계신 React로 만든 포트폴리오입니다.',
+        desc: 'React와 nextjs 그리고 다양한 React package를 이용해 만든 mobile과 pc 반응형 포트폴리오 웹사이트입니다.',
         term: '20.12.3 - 상시 업데이트 중 ',
-        skills: ['javascript, react, nodejs, nextjs'],
+        skills: ['javascript, react, nextjs'],
         func: 'scrolling, animation, 메세지보내기',
-        details: 'antd design library로 화면을 구현하고 react-full-page, aos package를 이용하여 Fullpage scrolling과 animation fade기능을 더해보았습니다.',
-        img: '/img/wall-e-meets-mac.jpg',
+        details: 'antd design library로 화면을 구현하고 react-full-page, aos package를 이용하여 Fullpage scrolling과 animation fade기능을 더해보았습니다. 또한 react-responsive package로 768px을 기준으로 mobile과 pc를 나누는 반응형으로 구현해보았습니다.',
+        img: '/img/portpolio.png',
         live: 'https://portpolio-five.vercel.app/',
         git: 'https://github.com/maldives0/portpolio'
     },
