@@ -23,9 +23,7 @@ import {
 import {
     default as HomeOutlined,
 } from '@ant-design/icons/HomeOutlined';
-import {
-    default as SettingOutlined,
-} from '@ant-design/icons/SettingOutlined';
+
 import { GlobalLayout, Logo, } from './style';
 import Image from 'next/image';
 import { FullPage } from 'react-full-page';
@@ -80,9 +78,7 @@ const AppLayout = ({ children }) => {
             <GlobalLayout />
             <Sider
                 className="site-sider-layout">
-                <div style={{ float: 'right' }}>
-                    <Link href="/admin"><a><SettingOutlined /></a></Link>
-                </div>
+
                 <Logo>
                     <Row gutter={3} style={{ display: 'block' }}>
                         <Image
