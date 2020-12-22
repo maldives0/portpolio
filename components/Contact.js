@@ -44,8 +44,8 @@ const contactData = [
     },
     {
         title: <CoffeeOutlined />,
-        content: <Paragraph copyable={{ tooltips: false, text: 'https://maldives0.github.io/' }}>
-            <Link href="https://maldives0.github.io/" target="_blank">
+        content: <Paragraph copyable={{ tooltips: false, text: 'https://maldives0.github.io' }}>
+            <Link href="https://maldives0.github.io" target="_blank">
                 https://maldives0.github.io/
 </Link>
         </Paragraph>
