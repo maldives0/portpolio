@@ -121,14 +121,16 @@ const Project = () => {
                 <Row xs={16} sm={12} md={8} className="project-title-layout">
                     <Title
                         data-aos="fade-up"
-                        data-aos-duration="5000"
+                        data-aos-duration="1000"
                         level={isTabletPC ? 4 : 5}
                     >이와 같은 프로젝트를 만들며 제가 공부했던 과정이 궁금하시다면 저의  개인 블로그에 놀러와주세요~
                 </Title>
                 </Row>
 
                 <Row >
-                    <Button key="blog" className="blog-button-layout" >
+                    <Button
+                        type="primary"
+                        key="blog" className="blog-button-layout" >
                         <Link href="https://maldives0.github.io" target="_blank"> 놀러가기<CoffeeOutlined />
                         </Link>
                     </Button>
