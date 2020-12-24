@@ -6,7 +6,7 @@ const projectData = [
         term: '20.07 - 20.09',
         skills: ['html5, css3, sass, javascript, jquery'],
         func: 'scrolling, sliding, ajax 등',
-        details: 'html5, css3, javascript를 익히기위한 첫 프로젝트였습니다. 팬션 전경을 Fullpage로 보여주기 위해 scrolling과 sliding 기능에 중점을 두었습니다. UI/UX를 염두해 두고 부드러운 화면 전환을 위해 css3 animation기능을 활용했습니다. 또한 서비스와 편의시설 화면을 구현할 때 JSON 형식의 데이터를 XHR객체를 이용해 Ajax 프로그래밍했습니다.',
+        details: 'html5, css3, javascript를 익히기위한 첫 프로젝트였습니다. 팬션 전경을 Fullpage로 보여주기 위해 scrolling과 sliding 기능에 중점을 두었습니다. UI/UX를 염두해 두고 부드러운 화면 전환을 위해 css3 animation기능과 javascript의 setInterval, jquery의 animation을 활용했습니다. 또한 서비스와 편의시설 화면을 구현할 때 JSON 형식의 데이터를 XHR객체를 이용해 Ajax로 가져오며 리로드 없이 부분적으로 정보를 가져와보았습니다.',
         img: '/img/daon.jpg',
         live: 'https://maldives0.github.io/daon/',
         git: 'https://github.com/maldives0/daon'

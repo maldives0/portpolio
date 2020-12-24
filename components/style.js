@@ -257,6 +257,21 @@ div.ant-descriptions.ant-descriptions-bordered{
 .ant-descriptions-item-content{
   line-height:2em;
 }
+.project-title-layout{  
+  margin-top:3%;
+  flex-wrap:wrap;
+}
+h4.ant-typography,
+h5.ant-typography
+{
+  line-height:2em;
+text-align:center;
+}
+.blog-button-layout{
+  font-size:16px;
+  width:110px;
+  height:40px;
+}
 `
 
     } />
