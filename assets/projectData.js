@@ -18,7 +18,7 @@ const projectData = [
         term: '20.10 - 20.11',
         skills: ['html5, css3, sass, javascript'],
         func: '밀롱가 이름으로 장소 검색하고 목록으로 보여주기, 현위치 마커로 표시하기, 여러개 마커에 이벤트 등록하기, 지도확대 Level 바꾸기,  dragging 등',
-        details: `vanilla js를 더 깊게 공부하기 위한 두번째 프로젝트였습니다. 밀롱가는 탱고라는 Social Dance를 추는 장소입니다. 서울에 있는 10곳의 밀롱가를 JSON형식의 데이터로 가져와 Kakao map에서 검색할 수 있는 반응형 App을 구현했습니다. 사용자가 검색한 결과를 지도상에 좌표로 변환에 해당 위치에 marker를 표시합니다. 동시에 장소 관련 정보를 리스트로 아래 화면에 보여줍니다. 사용자가 본인의 현 위치를 파악할 수 있도록 GeoLocation을 이용해서 접속 위치를 얻어왔으며 지도의 확대 위치를 변경해 주변의 다른 밀롱가를 확인할 수 있습니다.`,
+        details: `vanilla js를 더 깊게 공부하기 위한 두번째 프로젝트였습니다. 밀롱가는 탱고라는 Social Dance를 추는 장소입니다. 서울에 있는 10곳의 밀롱가를 JSON형식의 데이터로 가져와 Kakao map에서 검색할 수 있는 반응형 App을 구현했습니다. 사용자가 검색한 결과를 지도상에 좌표로 변환에 해당 위치에 marker를 표시합니다. 동시에 장소 관련 정보를 리스트로 아래 화면에 보여줍니다. 사용자가 본인의 현 위치를 파악할 수 있도록 GeoLocation을 이용해서 접속 위치를 얻어왔으며 지도의 확대 위치를 변경해 주변의 다른 밀롱가를 확인할 수 있습니다. 이 프로젝트를 진행하며 javascript의 실행 context에 대해 많은 것을 공부할 수 있었습니다.`,
         img: '/img/ymillonga-map.png',
         live: 'https://maldives0.github.io/ymillonga-map/',
         git: 'https://github.com/maldives0/ymillonga-map'
