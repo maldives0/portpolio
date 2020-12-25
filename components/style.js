@@ -254,8 +254,9 @@ export const ProjectLayout = () => (
 div.ant-descriptions.ant-descriptions-bordered{
   width:200%;
 }
+
 .ant-descriptions-item-content{
-  line-height:2em;
+  line-height:1.5em;
 }
 .project-title-layout{  
   margin-top:3%;

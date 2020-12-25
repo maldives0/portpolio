@@ -45,13 +45,13 @@ const basicStyle = {
 };
 
 const CustomControls = (collapsed, setCollapsed) => ({ getCurrentSlideIndex, scrollToSlide }) => {
-
     const currentSlideIndex = getCurrentSlideIndex();
     const onClickMenu = useCallback((e) => {
         scrollToSlide(e.key - 1);
     }, []);
     const [currentStyle, setCurrentStyle] = useState(basicStyle);
     const isTabletPC = useMediaQuery({ query: "(min-width: 768px) " });
+
     useEffect(() => {
         if (!isTabletPC) {
             setCurrentStyle({
