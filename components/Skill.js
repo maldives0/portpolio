@@ -31,6 +31,8 @@ const Skill = () => {
             <p>webpack</p>
             <p>nginx</p>
             <p>php</p>
+            <p>vue</p>
+            <p>vuex</p>
         </div>
     );
     return (
@@ -185,6 +187,22 @@ const Skill = () => {
                     <Image
                         src="/img/logo/php.png"
                         alt="php"
+                        width={100}
+                        height={100}
+                    />
+                </Col>
+                <Col xs={5} sm={4} md={4}>
+                    <Image
+                        src="/img/logo/vue.png"
+                        alt="vue"
+                        width={100}
+                        height={100}
+                    />
+                </Col>
+                <Col xs={5} sm={4} md={4}>
+                    <Image
+                        src="/img/logo/vuex.png"
+                        alt="vuex"
                         width={100}
                         height={100}
                     />

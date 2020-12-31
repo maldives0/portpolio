@@ -73,41 +73,33 @@ const CustomControls = (collapsed, setCollapsed) => ({ getCurrentSlideIndex, scr
                     <HomeOutlined />}>
                     Home
                 </Menu.Item>
-
-
                 <Menu.Item key="2" icon={
                     <UserOutlined />}>
                     About
                 </Menu.Item>
-
                 <Menu.Item key="3" icon={
                     <AppstoreAddOutlined />}>
                     Tech Skills
                 </Menu.Item>
-
                 <Menu.Item key="4" icon={
                     <BulbOutlined />
                 }>
                     Project
                 </Menu.Item>
-
                 <Menu.Item key="5" icon={
                     <FormOutlined />
                 }>
                     Experience
                 </Menu.Item>
-
                 <Menu.Item key="6" icon={
                     <BankOutlined />}>
                     Education
                 </Menu.Item>
-
                 <Menu.Item key="7" icon={
                     <MailOutlined />
                 }>
                     Contact
                 </Menu.Item>
-
             </Menu>
         </>
     );
