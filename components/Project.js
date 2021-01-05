@@ -35,7 +35,7 @@ const Project = () => {
                 data-aos-delay="200"
             >
                 <ProjectLayout />
-                <Row justify={isTabletPC ? "space-around" : "center"}>
+                <Row justify={isTabletPC ? "space-around" : "center"} >
                     <List
                         grid={{
                             xs: 2,
@@ -109,9 +109,9 @@ const Project = () => {
                             layout={"vertical"}
                             bordered={true}
                             size={"small"}
-                            column={{ xs: 1, sm: 2, md: 1 }}
+                            column={{ xs: 2, sm: 2, md: 1 }}
                         >
-                            <Descriptions.Item label="Term" span={2}>{seletedData.term}</Descriptions.Item>
+                            <Descriptions.Item label="Term">{seletedData.term}</Descriptions.Item>
                             <Descriptions.Item label="Using Skills">{seletedData.skills}</Descriptions.Item>
                             <Descriptions.Item label="func">{seletedData.func}</Descriptions.Item>
                             <Descriptions.Item label="detailed description">{seletedData.details}</Descriptions.Item>
@@ -122,7 +122,7 @@ const Project = () => {
                     <Title
                         data-aos="fade-up"
                         data-aos-duration="1000"
-                        level={isTabletPC ? 4 : 5}
+                        level={5}
                     >이와 같은 프로젝트를 만들며 제가 공부했던 과정이 궁금하시다면 저의  개인 블로그에 놀러와주세요~
                 </Title>
                 </Row>
@@ -131,7 +131,7 @@ const Project = () => {
                     <Button
                         type="primary"
                         key="blog" className="blog-button-layout" >
-                        <Link href="https://maldives0.github.io" target="_blank"> 놀러가기<CoffeeOutlined />
+                        <Link href="https://maldives0.github.io" target="_blank" prefetch={false}> 블로그 놀러가기<CoffeeOutlined />
                         </Link>
                     </Button>
                 </Row>

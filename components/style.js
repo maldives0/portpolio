@@ -13,7 +13,7 @@ export const GlobalLayout = () => (
     }
     .sider-layout{
     background: #fff;
-       height:100vh;
+    height:100vh;
     position:fixed;
     left:0;
     z-index:99;
@@ -41,10 +41,10 @@ export const GlobalLayout = () => (
      }
    }
    .layout-background{
-         height:0;
-         width:100%;
+      height:0;
+      width:100%;
    }
-   .basic-layout-background-pc{
+  .basic-layout-background-pc{
     background:#f0f2f5;
     display: flex;
     justify-content: center;
@@ -258,19 +258,14 @@ div.ant-descriptions.ant-descriptions-bordered{
 .ant-descriptions-item-content{
   line-height:1.5em;
 }
-.project-title-layout{  
-  margin-top:3%;
-  flex-wrap:wrap;
-}
-h4.ant-typography,
+
 h5.ant-typography
 {
-  line-height:2em;
 text-align:center;
 }
 .blog-button-layout{
   font-size:16px;
-  width:110px;
+  width:170px;
   height:40px;
 }
 `
