@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutLayout } from './style';
+import { AboutLayout, ParagraphLayout, AboutOutlay } from './style';
 import { Typography } from 'antd';
 import { useMediaQuery } from "react-responsive";
 const { Title, Paragraph, Text } = Typography;
@@ -9,12 +9,10 @@ const About = () => {
     const isTabletPC = useMediaQuery({ query: "(min-width: 768px) " });
 
     return (
-        <div data-aos-anchor="#trigger-about"
-            className={isTabletPC ? "about-layout-background-pc" : "about-layout-background-mobile"}>
+        <AboutOutlay data-aos-anchor="#trigger-about"
+        >
             <AboutLayout />
-            <Paragraph
-                style={isTabletPC ? { fontSize: 22, textAlign: 'center', padding: '3%' } : { fontSize: 18, textAlign: 'center', padding: '3%' }}
-                data-aos="fade-down"
+            <ParagraphLayout data-aos="fade-down"
             >
                 <Text
                     className="ant-typography-about">
@@ -32,7 +30,7 @@ const About = () => {
                     >  - 영국 경제학자 슈마허
                         (Ernst Friedrich Schumacher)</div>
                 </Text>
-            </Paragraph>
+            </ParagraphLayout>
             <Paragraph
                 style={{ marginTop: 100 }}>
                 <Title
@@ -54,7 +52,7 @@ const About = () => {
 
             </Paragraph>
 
-        </div>
+        </AboutOutlay>
     );
 }
 export default About;

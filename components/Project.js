@@ -80,14 +80,14 @@ const Project = () => {
                         footer={[
                             <Button key="live">
                                 <Link
-                                    prefetch={false}
+                                    prefetch="false"
                                     href={seletedData.live} target="_blank">
                                     <SelectOutlined style={{ marginRight: 2 }} />
                                     바로가기</Link>
                             </Button>,
                             <Button key="github" type="primary">
                                 <Link
-                                    prefetch={false}
+                                    prefetch="false"
                                     href={seletedData.git} target="_blank">
                                     <GithubOutlined style={{ marginRight: 2 }} />
                                     코드보기</Link>
@@ -131,7 +131,7 @@ const Project = () => {
                     <Button
                         type="primary"
                         key="blog" className="blog-button-layout" >
-                        <Link href="https://maldives0.github.io" target="_blank" prefetch={false}> 블로그 놀러가기<CoffeeOutlined />
+                        <Link href="https://maldives0.github.io" target="_blank" prefetch="false"> 블로그 놀러가기<CoffeeOutlined />
                         </Link>
                     </Button>
                 </Row>

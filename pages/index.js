@@ -8,52 +8,45 @@ import Project from '../components/Project';
 import Education from '../components/Education';
 import Contact from '../components/Contact';
 import { Slide } from 'react-full-page';
-import { GlobalLayout } from '../components/style';
+import { GlobalLayout, SildeLayout } from '../components/style';
 
-import { useMediaQuery } from "react-responsive";
 const Index = () => {
-    const isTabletPC = useMediaQuery({ query: "(min-width: 768px) " });
+
     return (
         <AppLayout>
             <GlobalLayout />
             <Slide>
-                <div
-                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
+                <SildeLayout>
                     <Home />
-                </div>
+                </SildeLayout>
             </Slide>
             <Slide>
                 <About />
             </Slide>
             <Slide>
-                <div
-                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
+                <SildeLayout>
                     <Skill />
-                </div>
+                </SildeLayout>
             </Slide>
             <Slide>
-                <div
-                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
+                <SildeLayout>
                     <Project />
-                </div>
+                </SildeLayout>
             </Slide>
             <Slide>
-                <div
-                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
+                <SildeLayout>
                     <Experience />
-                </div>
+                </SildeLayout>
             </Slide>
             <Slide>
-                <div
-                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
+                <SildeLayout>
                     <Education />
-                </div>
+                </SildeLayout>
             </Slide>
             <Slide>
-                <div
-                    className={isTabletPC ? "basic-layout-background-pc" : "basic-layout-background-mobile"}>
+                <SildeLayout>
                     <Contact />
-                </div>
+                </SildeLayout>
             </Slide>
         </AppLayout>
     );
