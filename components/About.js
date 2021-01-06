@@ -9,11 +9,9 @@ const About = () => {
     const isTabletPC = useMediaQuery({ query: "(min-width: 768px) " });
 
     return (
-        <AboutOutlay data-aos-anchor="#trigger-about"
-        >
+        <AboutOutlay data-aos-anchor="#trigger-about">
             <AboutLayout />
-            <ParagraphLayout data-aos="fade-down"
-            >
+            <ParagraphLayout data-aos="fade-down">
                 <Text
                     className="ant-typography-about">
                     “빼어난 구두 수선공이 되려면 이제 구두를 잘 만드는 지식만으로는 부족하다.

@@ -33,6 +33,7 @@ const Project = () => {
         <>
             <div data-aos="fade-down"
                 data-aos-delay="200"
+                data-aos-anchor="#trigger-project"
             >
                 <ProjectLayout />
                 <Row justify={isTabletPC ? "space-around" : "center"} >
@@ -121,7 +122,7 @@ const Project = () => {
                 <Row xs={16} sm={12} md={8} className="project-title-layout">
                     <Title
                         data-aos="fade-up"
-                        data-aos-duration="1000"
+                        data-aos-duration="2000"
                         level={5}
                     >이와 같은 프로젝트를 만들며 제가 공부했던 과정이 궁금하시다면 저의  개인 블로그에 놀러와주세요~
                 </Title>
