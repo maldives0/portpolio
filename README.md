@@ -5,7 +5,7 @@
 
 ## 작품 소개  
 
- React와 nextjs 그리고 다양한 React package를 이용해 만든 mobile과 pc 반응형(768px 기준) 포트폴리오 웹사이트입니다
+ React와 nextjs 그리고 다양한 React package를 이용해 만든 mobile과 pc 반응형(768px 기준) 포트폴리오 웹사이트입니다. react hooks를 익히기 위한 side 프로젝트였습니다. react hooks들이 어떤 상황에서 쓰여야하는지 고민하면서 각 hook들의 차이를 이해할 수 있었습니다. 이렇게 이해한 바를 react로 화면을 구현하는데 도움을 주는 다양한 packages를 사용해보면서 여러 방법으로 응용볼 수 있었습니다.
 
 ## 작업기간  
 
