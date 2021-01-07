@@ -27,7 +27,6 @@ const Skill = () => {
         <div style={{ textTransform: 'uppercase' }}>
             <p>expressjs</p>
             <p>mysql</p>
-            <p>react-nativ</p>
             <p>webpack</p>
             <p>nginx</p>
             <p>php</p>
@@ -155,14 +154,6 @@ const Skill = () => {
                     <Image
                         src="/img/logo/mysql.png"
                         alt="mysql"
-                        width={100}
-                        height={100}
-                    />
-                </Col>
-                <Col xs={5} sm={4} md={4}>
-                    <Image
-                        src="/img/logo/react-native.png"
-                        alt="react-native"
                         width={100}
                         height={100}
                     />
