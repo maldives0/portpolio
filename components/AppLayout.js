@@ -97,6 +97,7 @@ const AppLayout = ({ children }) => {
                 <Layout className="layout">
                     <GlobalLayout />
                     <Sider
+                        prefecth="false"
                         collapsible
                         collapsed={collapsed}
                         trigger={null}

@@ -90,7 +90,7 @@ const Project = () => {
                         visible={isModalVisible} >
                         {isTabletPC ? (<div className="modal-image-style">
                             <Image
-                                src={seletedData.Image}
+                                src={seletedData.img}
                                 alt={seletedData.key}
                                 width={300}
                                 height={450}
