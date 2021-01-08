@@ -1,18 +1,8 @@
 import React from 'react';
-import {
-    Typography, Card, Tooltip
-    , Row, Col
-} from 'antd';
-
-import {
-    default as TeamOutlined,
-} from '@ant-design/icons/TeamOutlined';
-import {
-    default as CalendarOutlined,
-} from '@ant-design/icons/CalendarOutlined';
-import {
-    default as CopyOutlined,
-} from '@ant-design/icons/CopyOutlined';
+import { Typography, Card, Tooltip, Row, Col } from 'antd';
+import { default as TeamOutlined } from '@ant-design/icons/TeamOutlined';
+import { default as CalendarOutlined } from '@ant-design/icons/CalendarOutlined';
+import { default as CopyOutlined } from '@ant-design/icons/CopyOutlined';
 import { ExperienceLayout } from './style';
 import { useMediaQuery } from "react-responsive";
 

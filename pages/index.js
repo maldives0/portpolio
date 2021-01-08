@@ -11,7 +11,6 @@ import { Slide } from 'react-full-page';
 import { GlobalLayout, SildeLayout } from '../components/style';
 
 const Index = () => {
-
     return (
         <AppLayout>
             <GlobalLayout />

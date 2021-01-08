@@ -1,20 +1,12 @@
 import React, { useState, useCallback } from 'react';
-import {
-    Typography, Card, Row, Col, List, Descriptions, Button, Modal,
-} from 'antd';
-import {
-    default as GithubOutlined,
-} from '@ant-design/icons/GithubOutlined';
-import {
-    default as SelectOutlined,
-} from '@ant-design/icons/SelectOutlined';
-import Image from 'next/image';
+import { Typography, Card, Row, Col, List, Descriptions, Button, Modal, } from 'antd';
+import { default as GithubOutlined } from '@ant-design/icons/GithubOutlined';
+import { default as SelectOutlined } from '@ant-design/icons/SelectOutlined';
 import { ProjectLayout } from './style';
-import {
-    default as CoffeeOutlined,
-} from '@ant-design/icons/CoffeeOutlined';
+import { default as CoffeeOutlined } from '@ant-design/icons/CoffeeOutlined';
 import projectData from '../assets/projectData';
 import { useMediaQuery } from "react-responsive";
+import Image from 'next/image';
 
 const { Link, Title, } = Typography;
 const Project = () => {
@@ -63,7 +55,6 @@ const Project = () => {
                                             description={item.desc}
                                         />) : (<Title
                                             level={5}>{item.title}</Title>)}
-
                                     </Card>
                                 </Col>
                             </List.Item>
@@ -99,13 +90,12 @@ const Project = () => {
                         visible={isModalVisible} >
                         {isTabletPC ? (<div className="modal-image-style">
                             <Image
-                                src={seletedData.img}
+                                src={seletedData.Image}
                                 alt={seletedData.key}
                                 width={300}
                                 height={450}
                             />
                         </div>) : null}
-
                         <Descriptions
                             layout={"vertical"}
                             bordered={true}
@@ -127,7 +117,6 @@ const Project = () => {
                     >이와 같은 프로젝트를 만들며 제가 공부했던 과정이 궁금하시다면 저의  개인 블로그에 놀러와주세요~
                 </Title>
                 </Row>
-
                 <Row >
                     <Button
                         type="primary"
@@ -136,10 +125,8 @@ const Project = () => {
                         </Link>
                     </Button>
                 </Row>
-
             </div>
         </>
-
     );
 }
 export default Project;

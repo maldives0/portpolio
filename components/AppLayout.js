@@ -1,39 +1,19 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Layout, Menu, Typography, Space, Row, Tooltip } from 'antd';
-
-import {
-    default as BulbOutlined,
-} from '@ant-design/icons/BulbOutlined';
-import {
-    default as UserOutlined,
-} from '@ant-design/icons/UserOutlined';
-import {
-    default as AppstoreAddOutlined,
-} from '@ant-design/icons/AppstoreAddOutlined';
-import {
-    default as BankOutlined,
-} from '@ant-design/icons/BankOutlined';
-import {
-    default as FormOutlined,
-} from '@ant-design/icons/FormOutlined';
-import {
-    default as MailOutlined,
-} from '@ant-design/icons/MailOutlined';
-import {
-    default as HomeOutlined,
-} from '@ant-design/icons/HomeOutlined';
-import {
-    default as MinusCircleTwoTone,
-} from '@ant-design/icons/MinusCircleTwoTone';
-import {
-    default as PlusCircleTwoTone,
-} from '@ant-design/icons/PlusCircleTwoTone';
-
+import { default as BulbOutlined, } from '@ant-design/icons/BulbOutlined';
+import { default as UserOutlined, } from '@ant-design/icons/UserOutlined';
+import { default as AppstoreAddOutlined, } from '@ant-design/icons/AppstoreAddOutlined';
+import { default as BankOutlined, } from '@ant-design/icons/BankOutlined';
+import { default as FormOutlined, } from '@ant-design/icons/FormOutlined';
+import { default as MailOutlined, } from '@ant-design/icons/MailOutlined';
+import { default as HomeOutlined, } from '@ant-design/icons/HomeOutlined';
+import { default as MinusCircleTwoTone, } from '@ant-design/icons/MinusCircleTwoTone';
+import { default as PlusCircleTwoTone, } from '@ant-design/icons/PlusCircleTwoTone';
 import { GlobalLayout, Logo, } from './style';
-import Image from 'next/image';
 import { FullPage } from 'react-full-page';
 import { useMediaQuery } from "react-responsive";
+import Image from 'next/image';
 
 const { Header, Sider, Footer, Content } = Layout;
 const { Text } = Typography;

@@ -1,26 +1,12 @@
 import React from 'react';
 import { Typography, List, Card, Row } from 'antd';
-import {
-    default as EnvironmentOutlined,
-} from '@ant-design/icons/EnvironmentOutlined';
-import {
-    default as PhoneOutlined,
-} from '@ant-design/icons/PhoneOutlined';
-import {
-    default as GithubOutlined,
-} from '@ant-design/icons/GithubOutlined';
-import {
-    default as CoffeeOutlined,
-} from '@ant-design/icons/CoffeeOutlined';
-import {
-    default as MailOutlined,
-} from '@ant-design/icons/MailOutlined';
-
+import { default as EnvironmentOutlined } from '@ant-design/icons/EnvironmentOutlined';
+import { default as PhoneOutlined } from '@ant-design/icons/PhoneOutlined';
+import { default as GithubOutlined } from '@ant-design/icons/GithubOutlined';
+import { default as CoffeeOutlined } from '@ant-design/icons/CoffeeOutlined';
+import { default as MailOutlined } from '@ant-design/icons/MailOutlined';
 import { ContactLayout, ContactFlex } from './style';
-
 const { Paragraph, Link, Title } = Typography;
-
-
 const contactData = [
     {
         title: <EnvironmentOutlined />,
@@ -56,8 +42,7 @@ const contactData = [
 const Contact = () => {
 
     return (
-        <ContactFlex data-aos-anchor="#trigger-contact"
-        >
+        <ContactFlex data-aos-anchor="#trigger-contact">
             <ContactLayout />
             <Row xs={16} sm={12} md={8} style={{ marginBottom: 50, textAlign: 'center' }}>
                 <Title
@@ -83,9 +68,7 @@ const Contact = () => {
                     )}
                 />
             </div>
-
         </ContactFlex>
-
     );
 };
 export default Contact;
